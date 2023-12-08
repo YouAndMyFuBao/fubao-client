@@ -40,7 +40,8 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.1.0"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:18.2.0"],\
-          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
+          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
+          ["zod", "npm:3.22.4"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -4145,9 +4146,19 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.1.0"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:18.2.0"],\
-          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
+          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
+          ["zod", "npm:3.22.4"]\
         ],\
         "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["zod", [\
+      ["npm:3.22.4", {\
+        "packageLocation": "../.yarn/berry/cache/zod-npm-3.22.4-2bccbc41b4-10c0.zip/node_modules/zod/",\
+        "packageDependencies": [\
+          ["zod", "npm:3.22.4"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]]\
   ]\
