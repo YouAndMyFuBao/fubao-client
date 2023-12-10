@@ -43,3 +43,7 @@ next-env.d.ts
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# local env files
+.env
+.env*.local
