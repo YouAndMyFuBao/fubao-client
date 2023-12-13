@@ -16,6 +16,7 @@
     "@hookform/resolvers": "^3.3.2",
     "@tanstack/react-query": "^5.12.2",
     "@vanilla-extract/css": "^1.14.0",
+    "@vanilla-extract/next-plugin": "^2.3.2",
     "axios": "^1.6.2",
     "next": "14.0.4",
     "react": "^18",
