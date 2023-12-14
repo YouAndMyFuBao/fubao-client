@@ -1566,6 +1566,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.21.0":
+  version: 7.23.6
+  resolution: "@babel/runtime@npm:7.23.6"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: d886954e985ef8e421222f7a2848884d96a752e0020d3078b920dd104e672fdf23bcc6f51a44313a048796319f1ac9d09c2c88ec8cbb4e1f09174bcd3335b9ff
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.22.15":
   version: 7.22.15
   resolution: "@babel/template@npm:7.22.15"
@@ -2461,6 +2470,13 @@ __metadata:
     webpack-plugin-serve:
       optional: true
   checksum: a9c8468417a14a23339e313cff6ddb8029e0637748973070e61d83a2534620b3492b9a42ecf9eb9d63cb709f53c17fe814bc7dd68d64c300db338e9fd7287bc4
+  languageName: node
+  linkType: hard
+
+"@popperjs/core@npm:^2.11.8, @popperjs/core@npm:^2.9.2":
+  version: 2.11.8
+  resolution: "@popperjs/core@npm:2.11.8"
+  checksum: 4681e682abc006d25eb380d0cf3efc7557043f53b6aea7a5057d0d1e7df849a00e281cd8ea79c902a35a414d7919621fc2ba293ecec05f413598e0b23d5a1e63
   languageName: node
   linkType: hard
 
@@ -4521,6 +4537,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-datepicker@npm:^4":
+  version: 4.19.4
+  resolution: "@types/react-datepicker@npm:4.19.4"
+  dependencies:
+    "@popperjs/core": "npm:^2.9.2"
+    "@types/react": "npm:*"
+    date-fns: "npm:^2.0.1"
+    react-popper: "npm:^2.2.5"
+  checksum: 2d854c5889b9e051d6fdb50cdb1375dbc16bb9b6f4a1fe37be0e1ec539a4c2c7ff46a0b7c696db390daa34a4f009ad2fbf7ef5ab1aeb0ce5e6155d8b7bb3c9bf
+  languageName: node
+  linkType: hard
+
 "@types/react-dom@npm:^18":
   version: 18.2.17
   resolution: "@types/react-dom@npm:18.2.17"
@@ -6258,6 +6286,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.2.6":
+  version: 2.3.2
+  resolution: "classnames@npm:2.3.2"
+  checksum: cd50ead57b4f97436aaa9f9885c6926323efc7c2bea8e3d4eb10e4e972aa6a1cfca1c7a0e06f8a199ca7498d4339e30bb6002e589e61c9f21248cbf3e8b0b18d
+  languageName: node
+  linkType: hard
+
 "clean-css@npm:^5.2.2":
   version: 5.3.3
   resolution: "clean-css@npm:5.3.3"
@@ -6750,6 +6785,15 @@ __metadata:
   version: 1.0.8
   resolution: "damerau-levenshtein@npm:1.0.8"
   checksum: 4c2647e0f42acaee7d068756c1d396e296c3556f9c8314bac1ac63ffb236217ef0e7e58602b18bb2173deec7ec8e0cac8e27cccf8f5526666b4ff11a13ad54a3
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.0.1, date-fns@npm:^2.30.0":
+  version: 2.30.0
+  resolution: "date-fns@npm:2.30.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.21.0"
+  checksum: e4b521fbf22bc8c3db332bbfb7b094fd3e7627de0259a9d17c7551e2d2702608a7307a449206065916538e384f37b181565447ce2637ae09828427aed9cb5581
   languageName: node
   linkType: hard
 
@@ -12205,6 +12249,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-datepicker@npm:^4.24.0":
+  version: 4.24.0
+  resolution: "react-datepicker@npm:4.24.0"
+  dependencies:
+    "@popperjs/core": "npm:^2.11.8"
+    classnames: "npm:^2.2.6"
+    date-fns: "npm:^2.30.0"
+    prop-types: "npm:^15.7.2"
+    react-onclickoutside: "npm:^6.13.0"
+    react-popper: "npm:^2.3.0"
+  peerDependencies:
+    react: ^16.9.0 || ^17 || ^18
+    react-dom: ^16.9.0 || ^17 || ^18
+  checksum: 3992c55b279cb6048176af6cd0d068a2bb737f13abdbded3cd1e890cdc6c583382a1094edbd9f8c23a515fde35bfe7ad602200f0c7ee750f0f5dbacb30b132bb
+  languageName: node
+  linkType: hard
+
 "react-docgen-typescript@npm:^2.2.2":
   version: 2.2.2
   resolution: "react-docgen-typescript@npm:2.2.2"
@@ -12258,6 +12319,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-fast-compare@npm:^3.0.1":
+  version: 3.2.2
+  resolution: "react-fast-compare@npm:3.2.2"
+  checksum: 0bbd2f3eb41ab2ff7380daaa55105db698d965c396df73e6874831dbafec8c4b5b08ba36ff09df01526caa3c61595247e3269558c284e37646241cba2b90a367
+  languageName: node
+  linkType: hard
+
 "react-hook-form@npm:^7.48.2":
   version: 7.48.2
   resolution: "react-hook-form@npm:7.48.2"
@@ -12292,6 +12360,30 @@ __metadata:
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
   checksum: 6eb5e4b28028c23e2bfcf73371e72cd4162e4ac7ab445ddae2afe24e347a37d6dc22fae6e1748632cd43c6d4f9b8f86dcf26bf9275e1874f436d129952528ae0
+  languageName: node
+  linkType: hard
+
+"react-onclickoutside@npm:^6.13.0":
+  version: 6.13.0
+  resolution: "react-onclickoutside@npm:6.13.0"
+  peerDependencies:
+    react: ^15.5.x || ^16.x || ^17.x || ^18.x
+    react-dom: ^15.5.x || ^16.x || ^17.x || ^18.x
+  checksum: 2013471d03965e3c89ead649063bda246a8e9ba72b7be1dbf00642c6c8a34a0142e951b1db3cf73ac53f34f459b772132eff6f7b89f4cde51c35740be6617161
+  languageName: node
+  linkType: hard
+
+"react-popper@npm:^2.2.5, react-popper@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "react-popper@npm:2.3.0"
+  dependencies:
+    react-fast-compare: "npm:^3.0.1"
+    warning: "npm:^4.0.2"
+  peerDependencies:
+    "@popperjs/core": ^2.0.0
+    react: ^16.8.0 || ^17 || ^18
+    react-dom: ^16.8.0 || ^17 || ^18
+  checksum: 23f93540537ca4c035425bb8d5e51b11131fbc921d7ac1d041d0ae557feac8c877f3a012d36b94df8787803f52ed81e6df9257ac9e58719875f7805518d6db3f
   languageName: node
   linkType: hard
 
@@ -14533,6 +14625,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"warning@npm:^4.0.2":
+  version: 4.0.3
+  resolution: "warning@npm:4.0.3"
+  dependencies:
+    loose-envify: "npm:^1.0.0"
+  checksum: aebab445129f3e104c271f1637fa38e55eb25f968593e3825bd2f7a12bd58dc3738bb70dc8ec85826621d80b4acfed5a29ebc9da17397c6125864d72301b937e
+  languageName: node
+  linkType: hard
+
 "watchpack@npm:2.4.0, watchpack@npm:^2.2.0, watchpack@npm:^2.4.0":
   version: 2.4.0
   resolution: "watchpack@npm:2.4.0"
@@ -14903,6 +15004,7 @@ __metadata:
     "@tanstack/react-query": "npm:^5.12.2"
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
+    "@types/react-datepicker": "npm:^4"
     "@types/react-dom": "npm:^18"
     "@typescript-eslint/eslint-plugin": "npm:^6.13.2"
     "@typescript-eslint/parser": "npm:^6.13.2"
@@ -14919,6 +15021,7 @@ __metadata:
     next: "npm:14.0.4"
     prettier: "npm:^3.1.0"
     react: "npm:^18"
+    react-datepicker: "npm:^4.24.0"
     react-dom: "npm:^18"
     react-hook-form: "npm:^7.48.2"
     react-query: "npm:^3.39.3"
