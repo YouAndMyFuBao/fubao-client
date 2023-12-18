@@ -102,7 +102,7 @@ section {
 }
 body {
   line-height: 1;
-  font-family: "Pretendard Variable", "Noto Sans KR", sans-serif;
+  font-family: 'Pretendard Variable', 'Noto Sans KR', sans-serif;
   font-weight: 400;
   background-color: var(--mm-scale-color-grey-00);
 }
@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -128,5 +128,12 @@ table {
 }
 
 button {
+  border: none;
   cursor: pointer;
+}
+
+a {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+  text-decoration: none;
 }
