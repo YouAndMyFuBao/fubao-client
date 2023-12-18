@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-export const createPostStyles = {
+export const createLetterStyles = {
   postWrapper: style({
     // boxShadow: '0 0 0 5px red inset',
     position: 'relative',
@@ -35,6 +35,9 @@ export const createPostStyles = {
     postText: style({
       backgroundColor: 'indigo',
       height: '300px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
     }),
 
     postTextInput: style({
