@@ -1,17 +1,19 @@
+import { useRouter } from 'next/router';
 import { useLetterContext } from '../hooks/useLetterContext';
-import { createLetterStyles } from '../CreateLetter/CreateLetter.css';
-import CreateLetter from '../CreateLetter/CreateLetter';
+import { createLetterStyles } from '../create-letter/index.css';
 
 export default function PreviewLetter() {
-  const { letterImage, letterText, step, setStep } = useLetterContext();
+  const { letterImage, letterText } = useLetterContext();
+
+  const router = useRouter();
 
   const handleEditClick = () => {
-    setStep(1);
+    router.push('/letter');
   };
+
   return (
     <>
-      {step === 1 && <CreateLetter />}
-      {step === 2 && (
+      <div className="wrapper">
         <div className={createLetterStyles.postWrapper}>
           {letterImage && (
             <img
@@ -36,11 +38,11 @@ export default function PreviewLetter() {
               {letterText}
             </div>
           </div>
-          <button className={createLetterStyles.submitButton} onClick={handleEditClick}>
-            수정하기
-          </button>
         </div>
-      )}
+        <button className={createLetterStyles.submitButton} onClick={handleEditClick}>
+          수정하기
+        </button>
+      </div>
     </>
   );
 }

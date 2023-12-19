@@ -3,6 +3,7 @@ import { HydrationBoundary, QueryClient, QueryClientProvider } from '@tanstack/r
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
 import { Layout } from '@/components/layout';
+import { LetterContextProvider } from './letter/hooks/useLetterContext';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
@@ -10,7 +11,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <HydrationBoundary state={pageProps.dehydratedState}>
         <Layout>
-          <Component {...pageProps} />
+          <LetterContextProvider>
+            <Component {...pageProps} />
+          </LetterContextProvider>
         </Layout>
       </HydrationBoundary>
     </QueryClientProvider>
