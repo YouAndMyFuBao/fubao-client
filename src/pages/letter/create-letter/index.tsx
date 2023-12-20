@@ -37,47 +37,49 @@ export default function CreateLetter() {
   return (
     <>
       <div className="wrapper">
-        {letterImage ? (
-          <div css={createLetterStyles.postWrapper}>
-            <img
-              css={createLetterStyles.image.selectedPostImage}
-              src={URL.createObjectURL(letterImage)}
-              alt="postImageSelected"
-            />
-            <button
-              css={createLetterStyles.image.deleteButton}
-              type="button"
-              onClick={handleDeleteButtonClick}
-            >
-              삭제X
-            </button>
-          </div>
-        ) : (
-          <div css={createLetterStyles.postWrapper}>
-            <label htmlFor="file" css={createLetterStyles.image.nonePostImage}>
-              <div className="btn-upload">사진을 업로드해주세요.</div>
-            </label>
+        <div className="letter-wrapper" css={createLetterStyles.postWrapper}>
+          {letterImage ? (
+            <div className="image-wrapper">
+              <img
+                css={createLetterStyles.image.selectedPostImage}
+                src={URL.createObjectURL(letterImage)}
+                alt="postImageSelected"
+              />
+              <button
+                css={createLetterStyles.image.deleteButton}
+                type="button"
+                onClick={handleDeleteButtonClick}
+              >
+                삭제X
+              </button>
+            </div>
+          ) : (
+            <div className="image-none-wrapper">
+              <label htmlFor="file" css={createLetterStyles.image.nonePostImage}>
+                <div className="btn-upload">사진을 업로드해주세요.</div>
+              </label>
+              <input
+                type="file"
+                id="file"
+                accept="image/*"
+                required
+                css={createLetterStyles.image.nonPostImageInput}
+                onChange={handleImageChange}
+              />
+            </div>
+          )}
+          <div className="text-wrapper" css={createLetterStyles.text.postText}>
             <input
-              type="file"
-              id="file"
-              accept="image/*"
-              required
-              css={createLetterStyles.image.nonPostImageInput}
-              onChange={handleImageChange}
+              type="text"
+              css={createLetterStyles.text.postTextInput}
+              value={letterText}
+              onChange={handleInputChange}
             />
           </div>
-        )}
-        <div css={createLetterStyles.text.postText}>
-          <input
-            type="text"
-            css={createLetterStyles.text.postTextInput}
-            value={letterText}
-            onChange={handleInputChange}
-          />
+          <button css={createLetterStyles.submitButton} onClick={handleSubmitPost}>
+            제출하기
+          </button>
         </div>
-        <button css={createLetterStyles.submitButton} onClick={handleSubmitPost}>
-          제출하기
-        </button>
       </div>
     </>
   );

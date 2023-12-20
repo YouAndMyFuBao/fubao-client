@@ -2,8 +2,10 @@ import { css } from '@emotion/react';
 
 export const createLetterStyles = {
   postWrapper: css({
-    // boxShadow: '0 0 0 5px red inset',
+    boxShadow: '0 0 0 5px red inset',
     position: 'relative',
+    width: '300px',
+    margin: '0 auto',
   }),
 
   image: {
