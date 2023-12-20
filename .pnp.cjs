@@ -46,6 +46,7 @@ const RAW_RUNTIME_STATE =
           ["@vanilla-extract/css", "npm:1.14.0"],\
           ["@vanilla-extract/next-plugin", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:2.3.2"],\
           ["axios", "npm:1.6.2"],\
+          ["cookies-next", "npm:4.1.0"],\
           ["eslint", "npm:8.55.0"],\
           ["eslint-config-next", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:14.0.4"],\
           ["eslint-config-prettier", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:9.1.0"],\
@@ -8581,6 +8582,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/cookie", [\
+      ["npm:0.4.1", {\
+        "packageLocation": "../.yarn/berry/cache/@types-cookie-npm-0.4.1-274a704dc6-10c0.zip/node_modules/@types/cookie/",\
+        "packageDependencies": [\
+          ["@types/cookie", "npm:0.4.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/cross-spawn", [\
       ["npm:6.0.6", {\
         "packageLocation": "../.yarn/berry/cache/@types-cross-spawn-npm-6.0.6-fbe5fe9243-10c0.zip/node_modules/@types/cross-spawn/",\
@@ -8835,6 +8845,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/node", [\
+      ["npm:16.18.68", {\
+        "packageLocation": "../.yarn/berry/cache/@types-node-npm-16.18.68-56f72825c0-10c0.zip/node_modules/@types/node/",\
+        "packageDependencies": [\
+          ["@types/node", "npm:16.18.68"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:18.19.3", {\
         "packageLocation": "../.yarn/berry/cache/@types-node-npm-18.19.3-9a233afc47-10c0.zip/node_modules/@types/node/",\
         "packageDependencies": [\
@@ -11499,6 +11516,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["cookie", [\
+      ["npm:0.4.2", {\
+        "packageLocation": "../.yarn/berry/cache/cookie-npm-0.4.2-7761894d5f-10c0.zip/node_modules/cookie/",\
+        "packageDependencies": [\
+          ["cookie", "npm:0.4.2"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:0.5.0", {\
         "packageLocation": "../.yarn/berry/cache/cookie-npm-0.5.0-e2d58a161a-10c0.zip/node_modules/cookie/",\
         "packageDependencies": [\
@@ -11512,6 +11536,18 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../.yarn/berry/cache/cookie-signature-npm-1.0.6-93f325f7f0-10c0.zip/node_modules/cookie-signature/",\
         "packageDependencies": [\
           ["cookie-signature", "npm:1.0.6"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["cookies-next", [\
+      ["npm:4.1.0", {\
+        "packageLocation": "../.yarn/berry/cache/cookies-next-npm-4.1.0-aff56ecab5-10c0.zip/node_modules/cookies-next/",\
+        "packageDependencies": [\
+          ["cookies-next", "npm:4.1.0"],\
+          ["@types/cookie", "npm:0.4.1"],\
+          ["@types/node", "npm:16.18.68"],\
+          ["cookie", "npm:0.4.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -21719,6 +21755,7 @@ const RAW_RUNTIME_STATE =
           ["@vanilla-extract/css", "npm:1.14.0"],\
           ["@vanilla-extract/next-plugin", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:2.3.2"],\
           ["axios", "npm:1.6.2"],\
+          ["cookies-next", "npm:4.1.0"],\
           ["eslint", "npm:8.55.0"],\
           ["eslint-config-next", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:14.0.4"],\
           ["eslint-config-prettier", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:9.1.0"],\
