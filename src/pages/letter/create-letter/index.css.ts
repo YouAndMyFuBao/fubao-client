@@ -1,13 +1,13 @@
-import { style } from '@vanilla-extract/css';
+import { css } from '@emotion/react';
 
 export const createLetterStyles = {
-  postWrapper: style({
+  postWrapper: css({
     // boxShadow: '0 0 0 5px red inset',
     position: 'relative',
   }),
 
   image: {
-    nonePostImage: style({
+    nonePostImage: css({
       backgroundColor: 'gray',
       width: '300px',
       height: '300px',
@@ -15,16 +15,16 @@ export const createLetterStyles = {
       justifyContent: 'center',
       alignItems: 'center',
     }),
-    nonPostImageInput: style({
+    nonPostImageInput: css({
       display: 'none',
     }),
-    selectedPostImage: style({
+    selectedPostImage: css({
       display: 'block',
       width: '300px',
       height: '300px',
       objectFit: 'cover',
     }),
-    deleteButton: style({
+    deleteButton: css({
       position: 'absolute',
       top: '10px',
       left: '10px',
@@ -32,7 +32,7 @@ export const createLetterStyles = {
   },
 
   text: {
-    postText: style({
+    postText: css({
       backgroundColor: 'indigo',
       height: '300px',
       display: 'flex',
@@ -40,14 +40,14 @@ export const createLetterStyles = {
       alignItems: 'center',
     }),
 
-    postTextInput: style({
+    postTextInput: css({
       width: '90%',
       height: '70%',
       margin: '10px 10px',
     }),
   },
 
-  submitButton: style({
+  submitButton: css({
     fontSize: '20px',
   }),
 };

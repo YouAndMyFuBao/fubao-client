@@ -1,6 +1,6 @@
-import { style } from '@vanilla-extract/css';
+import { css } from '@emotion/react';
 
-export const base = style({
+export const base = css({
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'center',
@@ -10,6 +10,6 @@ export const base = style({
   zIndex: 0,
 });
 
-export const hamburger = style({
+export const hamburger = css({
   cursor: 'pointer',
 });

@@ -38,14 +38,14 @@ export default function CreateLetter() {
     <>
       <div className="wrapper">
         {letterImage ? (
-          <div className={createLetterStyles.postWrapper}>
+          <div css={createLetterStyles.postWrapper}>
             <img
-              className={createLetterStyles.image.selectedPostImage}
+              css={createLetterStyles.image.selectedPostImage}
               src={URL.createObjectURL(letterImage)}
               alt="postImageSelected"
             />
             <button
-              className={createLetterStyles.image.deleteButton}
+              css={createLetterStyles.image.deleteButton}
               type="button"
               onClick={handleDeleteButtonClick}
             >
@@ -53,8 +53,8 @@ export default function CreateLetter() {
             </button>
           </div>
         ) : (
-          <div className={createLetterStyles.postWrapper}>
-            <label htmlFor="file" className={createLetterStyles.image.nonePostImage}>
+          <div css={createLetterStyles.postWrapper}>
+            <label htmlFor="file" css={createLetterStyles.image.nonePostImage}>
               <div className="btn-upload">사진을 업로드해주세요.</div>
             </label>
             <input
@@ -62,20 +62,20 @@ export default function CreateLetter() {
               id="file"
               accept="image/*"
               required
-              className={createLetterStyles.image.nonPostImageInput}
+              css={createLetterStyles.image.nonPostImageInput}
               onChange={handleImageChange}
             />
           </div>
         )}
-        <div className={createLetterStyles.text.postText}>
+        <div css={createLetterStyles.text.postText}>
           <input
             type="text"
-            className={createLetterStyles.text.postTextInput}
+            css={createLetterStyles.text.postTextInput}
             value={letterText}
             onChange={handleInputChange}
           />
         </div>
-        <button className={createLetterStyles.submitButton} onClick={handleSubmitPost}>
+        <button css={createLetterStyles.submitButton} onClick={handleSubmitPost}>
           제출하기
         </button>
       </div>

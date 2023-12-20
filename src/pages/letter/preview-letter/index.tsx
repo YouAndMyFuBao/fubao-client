@@ -41,16 +41,16 @@ export default function PreviewLetter() {
   return (
     <>
       <div className="wrapper">
-        <div className={createLetterStyles.postWrapper}>
+        <div css={createLetterStyles.postWrapper}>
           {letterImage && (
             <img
-              className={createLetterStyles.image.selectedPostImage}
+              css={createLetterStyles.image.selectedPostImage}
               src={URL.createObjectURL(letterImage)}
               alt="postImageSelected"
             />
           )}
           <div
-            className={createLetterStyles.text.postText}
+            css={createLetterStyles.text.postText}
             style={{
               display: 'flex',
               justifyContent: 'center',
@@ -70,7 +70,7 @@ export default function PreviewLetter() {
             </div>
           </div>
         </div>
-        <button className={createLetterStyles.submitButton} onClick={handleEditClick}>
+        <button css={createLetterStyles.submitButton} onClick={handleEditClick}>
           수정하기
         </button>
         <button>이미지 저장</button>

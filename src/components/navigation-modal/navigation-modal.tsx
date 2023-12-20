@@ -39,14 +39,14 @@ const navigationList: TabType[] = [
 export default function NavigationModal({ isOpen, onClose }: NavigationModalProps) {
   if (!isOpen) return null;
   return (
-    <div className={navigationModal.base}>
-      <header className={navigationModal.modalHeader}>
-        <button className={navigationModal.modalCloseButton} onClick={onClose}>
+    <div css={navigationModal.base}>
+      <header css={navigationModal.modalHeader}>
+        <button css={navigationModal.modalCloseButton} onClick={onClose}>
           <Image alt="exit-button" src="/assets/svgs/IconArrowBack.svg" width={18} height={18} />
         </button>
       </header>
       {navigationList.map((tab: TabType) => (
-        <Link href={tab.name} key={tab.id} className={navigationModal.modalButton}>
+        <Link href={tab.name} key={tab.id} css={navigationModal.modalButton}>
           <p>{tab.title}</p>
           <Image
             alt="arrow-button"
