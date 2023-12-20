@@ -13,10 +13,10 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.3.2",
     "@tanstack/react-query": "^5.12.2",
-    "@vanilla-extract/css": "^1.14.0",
-    "@vanilla-extract/next-plugin": "^2.3.2",
     "axios": "^1.6.2",
     "cookies-next": "^4.1.0",
     "framer-motion": "^10.16.16",
