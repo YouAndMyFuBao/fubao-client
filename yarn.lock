@@ -4546,6 +4546,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cookie@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "@types/cookie@npm:0.4.1"
+  checksum: f96afe12bd51be1ec61410b0641243d93fa3a494702407c787a4c872b5c8bcd39b224471452055e44a9ce42af1a636e87d161994226eaf4c2be9c30f60418409
+  languageName: node
+  linkType: hard
+
 "@types/cross-spawn@npm:^6.0.2":
   version: 6.0.6
   resolution: "@types/cross-spawn@npm:6.0.6"
@@ -4775,6 +4782,13 @@ __metadata:
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 2c8b70cba731eb2ae3ae046daa74903bfcbb0e7b9196da767e5895054f6d252296ae7a04fb1dbbcb53bb004c4c658c05eaea2731bc9e2dd9e08f7e88d672f563
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^16.10.2":
+  version: 16.18.68
+  resolution: "@types/node@npm:16.18.68"
+  checksum: 4c7e65c78bc3893ff89a0761bf18f412080486ef31a8b62d7bc1b91551c8a4218dc4bf41443450318914758c58976ac19e969fd7dce019741f085547e83d1fb7
   languageName: node
   linkType: hard
 
@@ -6896,6 +6910,24 @@ __metadata:
   version: 0.5.0
   resolution: "cookie@npm:0.5.0"
   checksum: c01ca3ef8d7b8187bae434434582288681273b5a9ed27521d4d7f9f7928fe0c920df0decd9f9d3bbd2d14ac432b8c8cf42b98b3bdd5bfe0e6edddeebebe8b61d
+  languageName: node
+  linkType: hard
+
+"cookie@npm:^0.4.0":
+  version: 0.4.2
+  resolution: "cookie@npm:0.4.2"
+  checksum: beab41fbd7c20175e3a2799ba948c1dcc71ef69f23fe14eeeff59fc09f50c517b0f77098db87dbb4c55da802f9d86ee86cdc1cd3efd87760341551838d53fca2
+  languageName: node
+  linkType: hard
+
+"cookies-next@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "cookies-next@npm:4.1.0"
+  dependencies:
+    "@types/cookie": "npm:^0.4.1"
+    "@types/node": "npm:^16.10.2"
+    cookie: "npm:^0.4.0"
+  checksum: 199d568921c5ac222b0e56144399c14566be4fe111ce58b74a3059c73c6a3980960704625f5ded7ee5a9a26694e9e1d90500ec3e8fb1c9a24e9c7f092bb2bb34
   languageName: node
   linkType: hard
 
@@ -15467,6 +15499,7 @@ __metadata:
     "@vanilla-extract/css": "npm:^1.14.0"
     "@vanilla-extract/next-plugin": "npm:^2.3.2"
     axios: "npm:^1.6.2"
+    cookies-next: "npm:^4.1.0"
     eslint: "npm:^8"
     eslint-config-next: "npm:14.0.4"
     eslint-config-prettier: "npm:^9.1.0"
