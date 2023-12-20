@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { useLetterContext } from '../hooks/useLetterContext';
+import { useLetterContext } from '../../../hooks/useLetterContext';
 import { createLetterStyles } from '../create-letter/index.css';
 
 export default function PreviewLetter() {

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { createLetterStyles } from './index.css';
-import { useLetterContext } from '../hooks/useLetterContext';
+import { useLetterContext } from '../../../hooks/useLetterContext';
 
 export default function CreateLetter() {
   const { letterImage, setLetterImage, letterText, setLetterText } = useLetterContext();
