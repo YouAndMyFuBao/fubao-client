@@ -1,10 +1,9 @@
-import { ReactElement } from 'react';
 import * as layout from './layout.css';
 
 interface LayoutProps {
-  children: ReactElement;
+  children: React.ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
-  return <div className={layout.base}>{children}</div>;
+  return <div css={layout.base}>{children}</div>;
 }

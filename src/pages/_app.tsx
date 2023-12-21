@@ -1,4 +1,4 @@
-import '@/styles/globals.css';
+import GlobalStyle from '@/styles/GlobalStyle';
 import { HydrationBoundary, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <HydrationBoundary state={pageProps.dehydratedState}>
         <Layout>
+          <GlobalStyle />
           <LetterContextProvider>
             <Component {...pageProps} />
           </LetterContextProvider>

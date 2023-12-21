@@ -1,7 +1,7 @@
-import { style } from '@vanilla-extract/css';
+import { css } from '@emotion/react';
 
 export const previewLetterStyles = {
-  postWrapper: style({
+  postWrapper: css({
     // boxShadow: '0 0 0 5px red inset',
     position: 'relative',
   }),

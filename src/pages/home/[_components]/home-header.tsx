@@ -16,9 +16,9 @@ export default function HomeHeader() {
 
   return (
     <>
-      <header className={homeHeader.base}>
+      <header css={homeHeader.base}>
         <Image
-          className={homeHeader.hamburger}
+          css={homeHeader.hamburger}
           alt="hamburger"
           src="/assets/svgs/IconHamburger.svg"
           width={26}

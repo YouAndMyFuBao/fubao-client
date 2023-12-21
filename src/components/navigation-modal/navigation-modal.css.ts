@@ -1,6 +1,6 @@
-import { style } from '@vanilla-extract/css';
+import { css } from '@emotion/react';
 
-export const base = style({
+export const base = css({
   height: '100vh',
   background: '#1E212B',
   zIndex: 1,
@@ -8,16 +8,16 @@ export const base = style({
   color: 'white',
 });
 
-export const modalHeader = style({
+export const modalHeader = css({
   height: '39px',
 });
 
-export const modalCloseButton = style({
+export const modalCloseButton = css({
   cursor: 'pointer',
   background: 'none',
 });
 
-export const modalButton = style({
+export const modalButton = css({
   display: 'flex',
   padding: '18px 0px',
   alignItems: 'center',
