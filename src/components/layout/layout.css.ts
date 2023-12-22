@@ -7,5 +7,5 @@ export const base = css({
   maxWidth: '450px',
   height: '100vh',
   margin: '0 auto',
-  backgroundColor: 'white',
+  backgroundColor: '#009436',
 });
