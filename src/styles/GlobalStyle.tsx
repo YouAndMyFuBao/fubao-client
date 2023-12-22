@@ -145,6 +145,24 @@ const styles = css`
     color: currentColor;
     text-decoration: none;
   }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    -user-drag: none;
+  }
 `;
 
 const GlobalStyle = () => <Global styles={styles} />;

@@ -3,7 +3,12 @@ import { css } from '@emotion/react';
 export const base = css({
   height: '100vh',
   background: '#1E212B',
-  zIndex: 1,
+  position: 'fixed',
+  top: 0,
+  zIndex: 10,
+  width: '100%',
+  minWidth: '390px',
+  maxWidth: '450px',
   padding: '22px',
   color: 'white',
 });

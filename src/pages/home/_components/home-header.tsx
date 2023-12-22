@@ -17,14 +17,16 @@ export default function HomeHeader() {
   return (
     <>
       <header css={homeHeader.base}>
-        <Image
-          css={homeHeader.hamburger}
-          alt="hamburger"
-          src="/assets/svgs/IconHamburger.svg"
-          width={26}
-          height={26}
-          onClick={openModal}
-        />
+        <div css={homeHeader.container}>
+          <Image
+            css={homeHeader.hamburger}
+            alt="hamburger"
+            src="/assets/svgs/IconHamburger.svg"
+            width={26}
+            height={26}
+            onClick={openModal}
+          />
+        </div>
       </header>
       <NavigationModal isOpen={isModalOpen} onClose={closeModal} />
     </>
