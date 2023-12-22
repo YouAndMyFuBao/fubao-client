@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import * as navigationModal from './navigation-modal.css';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -37,25 +38,48 @@ const navigationList: TabType[] = [
 ];
 
 export default function NavigationModal({ isOpen, onClose }: NavigationModalProps) {
-  if (!isOpen) return null;
   return (
-    <div css={navigationModal.base}>
-      <header css={navigationModal.modalHeader}>
-        <button css={navigationModal.modalCloseButton} onClick={onClose}>
-          <Image alt="exit-button" src="/assets/svgs/IconArrowBack.svg" width={18} height={18} />
-        </button>
-      </header>
-      {navigationList.map((tab: TabType) => (
-        <Link href={tab.name} key={tab.id} css={navigationModal.modalButton}>
-          <p>{tab.title}</p>
-          <Image
-            alt="arrow-button"
-            src="/assets/svgs/IconNavigationButton.svg"
-            width={12}
-            height={12}
-          />
-        </Link>
-      ))}
-    </div>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: 1000 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 1000 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+        >
+          <div css={navigationModal.base}>
+            <header css={navigationModal.modalHeader}>
+              <button css={navigationModal.modalCloseButton} onClick={onClose}>
+                <Image
+                  alt="exit-button"
+                  src="/assets/svgs/IconArrowBack.svg"
+                  width={18}
+                  height={18}
+                />
+              </button>
+            </header>
+            {navigationList.map((tab: TabType) => (
+              <Link href={tab.name} key={tab.id}>
+                <motion.div
+                  initial={{ opacity: 0, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  // exit={{ opacity: 0, y: 1000 }}
+                  transition={{ duration: 1.3, ease: 'easeInOut' }}
+                  css={navigationModal.modalButton}
+                >
+                  <p>{tab.title}</p>
+                  <Image
+                    alt="arrow-button"
+                    src="/assets/svgs/IconNavigationButton.svg"
+                    width={12}
+                    height={12}
+                  />
+                </motion.div>
+              </Link>
+            ))}
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
