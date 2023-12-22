@@ -13,6 +13,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@babel/core": "^7.23.6",
+    "@emotion/babel-preset-css-prop": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.3.2",
@@ -39,6 +41,7 @@
     "@storybook/react": "^7.6.6",
     "@storybook/test": "^7.6.6",
     "@svgr/webpack": "^8.1.0",
+    "@types/babel__core": "^7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-datepicker": "^4",
