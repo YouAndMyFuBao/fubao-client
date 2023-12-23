@@ -1,17 +1,17 @@
-import * as Style from './modal.css';
+import * as Style from './bottomSheet.css';
 
-interface ModalProps {
+interface bottomSheetProps {
   children: string;
   onClickClose: () => void;
   onClickDelete: () => void;
 }
 
-export default function Modal({ children, onClickClose, onClickDelete }: ModalProps) {
+export default function BottomSheet({ children, onClickClose, onClickDelete }: bottomSheetProps) {
   return (
     <>
-      <div className="modal-wrapper" css={Style.wrapper}>
-        <div css={Style.ModalBar}></div>
-        <strong css={Style.modalText}>{children}</strong>
+      <div className="bottom-sheet-wrapper" css={Style.wrapper}>
+        <div css={Style.bottomSheetBar}></div>
+        <strong css={Style.bottomSheetText}>{children}</strong>
         <div className="group-button" css={Style.groupButton}>
           <button css={Style.closeButton} onClick={onClickClose}>
             닫기

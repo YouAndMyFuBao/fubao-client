@@ -7,7 +7,7 @@ export const wrapper = css({
   borderRadius: '20px',
 });
 
-export const ModalBar = css({
+export const bottomSheetBar = css({
   margin: '0 auto',
   width: '48px',
   height: '4px',
@@ -15,7 +15,7 @@ export const ModalBar = css({
   backgroundColor: '#E5E8EB',
 });
 
-export const modalText = css({
+export const bottomSheetText = css({
   display: 'inline-block',
   margin: '24px 0',
   color: '#1E212B',

@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Modal from '@/components/modal/modal';
+import BottomSheet from '@/components/bottomSheet/bottomSheet';
 
-const meta: Meta<typeof Modal> = {
+const meta: Meta<typeof BottomSheet> = {
   title: 'components/modal/modal',
-  component: Modal,
+  component: BottomSheet,
   tags: ['autodocs'],
   argTypes: {},
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Modal>;
+type Story = StoryObj<typeof BottomSheet>;
 
 export const DeleteModal: Story = {
   args: {
