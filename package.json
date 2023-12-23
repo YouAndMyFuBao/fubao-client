@@ -13,6 +13,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@babel/core": "^7.23.6",
+    "@emotion/babel-preset-css-prop": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.3.2",
@@ -26,19 +28,20 @@
     "react-dom": "^18",
     "react-hook-form": "^7.48.2",
     "react-query": "^3.39.3",
-    "storybook": "^7.6.4",
+    "storybook": "^7.6.6",
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.4",
-    "@storybook/addon-interactions": "^7.6.4",
-    "@storybook/addon-links": "^7.6.4",
-    "@storybook/addon-onboarding": "^1.0.9",
-    "@storybook/blocks": "^7.6.4",
-    "@storybook/nextjs": "^7.6.4",
-    "@storybook/react": "^7.6.4",
-    "@storybook/test": "^7.6.4",
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/nextjs": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "@storybook/test": "^7.6.6",
     "@svgr/webpack": "^8.1.0",
+    "@types/babel__core": "^7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-datepicker": "^4",
@@ -53,7 +56,8 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "webpack": "^5.89.0"
   },
   "packageManager": "yarn@4.0.2",
   "lint-staged": {
