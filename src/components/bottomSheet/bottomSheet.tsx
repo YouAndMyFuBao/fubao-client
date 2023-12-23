@@ -1,12 +1,12 @@
 import * as Style from './bottomSheet.css';
 
-interface bottomSheetProps {
+interface BottomSheetProps {
   children: string;
   onClickClose: () => void;
   onClickDelete: () => void;
 }
 
-export default function BottomSheet({ children, onClickClose, onClickDelete }: bottomSheetProps) {
+export default function BottomSheet({ children, onClickClose, onClickDelete }: BottomSheetProps) {
   return (
     <>
       <div className="bottom-sheet-wrapper" css={Style.wrapper}>
