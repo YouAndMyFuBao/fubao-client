@@ -20,7 +20,7 @@ export default function Header({
     <>
       <div css={Style.headerWrapper} className="header">
         <div>
-          {leftBackPage && <IconArrowBack alt="exit-button" css={Style.leftButton} />}
+          {leftBackPage && <IconArrowBack alt="exit-button" />}
           {children && <h2 css={Style.title}>{children}</h2>}
         </div>
         {rightDoneButton && (
