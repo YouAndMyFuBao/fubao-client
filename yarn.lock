@@ -3354,6 +3354,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-themes@npm:^7.6.6":
+  version: 7.6.6
+  resolution: "@storybook/addon-themes@npm:7.6.6"
+  dependencies:
+    ts-dedent: "npm:^2.0.0"
+  checksum: 5f6f2b70ccb6ded5dcc002db54805ba4e882205fc77bf5b1585d8ea36379a54e07f76a75ffc47f14c4d0a1597837a94b4849a7f7ae77a077c3316425f923cd75
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-toolbars@npm:7.6.6":
   version: 7.6.6
   resolution: "@storybook/addon-toolbars@npm:7.6.6"
@@ -15317,6 +15326,7 @@ __metadata:
     "@storybook/addon-interactions": "npm:^7.6.6"
     "@storybook/addon-links": "npm:^7.6.6"
     "@storybook/addon-onboarding": "npm:^1.0.10"
+    "@storybook/addon-themes": "npm:^7.6.6"
     "@storybook/blocks": "npm:^7.6.6"
     "@storybook/nextjs": "npm:^7.6.6"
     "@storybook/react": "npm:^7.6.6"
