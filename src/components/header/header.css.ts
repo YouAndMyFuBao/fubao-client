@@ -10,8 +10,7 @@ export const title = css({
   display: 'inline',
   color: '#fff',
   fontSize: '20',
-  verticalAlign: 'top',
-  lineHeight: '1.3',
+  verticalAlign: '25%',
 });
 
 export const rightButton = css({

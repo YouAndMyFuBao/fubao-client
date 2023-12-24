@@ -1,5 +1,5 @@
 import * as Style from './header.css';
-import Image from 'next/image';
+import { IconArrowBack } from '../../../public/assets/svgs';
 
 interface HeaderProps {
   children?: string;
@@ -7,24 +7,21 @@ interface HeaderProps {
   leftBackPage?: boolean;
   rightDoneButton?: boolean;
   rightCloseButton?: boolean;
-  rightSettingsButton?: boolean;
 }
 
 export default function Header({
+  children,
   onClick,
   leftBackPage,
   rightDoneButton,
   rightCloseButton,
-  rightSettingsButton,
 }: HeaderProps) {
   return (
     <>
       <div css={Style.headerWrapper} className="header">
         <div>
-          {leftBackPage && (
-            <Image alt="exit-button" src="/assets/svgs/IconArrowBack.svg" width={18} height={18} />
-          )}
-          <h2 css={Style.title}>편지쓰기</h2>
+          {leftBackPage && <IconArrowBack alt="exit-button" css={Style.leftButton} />}
+          {children && <h2 css={Style.title}>{children}</h2>}
         </div>
         {rightDoneButton && (
           <strong css={Style.rightButton} onClick={onClick}>
@@ -35,15 +32,6 @@ export default function Header({
           <strong css={Style.rightButton} onClick={onClick}>
             닫기
           </strong>
-        )}
-        {rightSettingsButton && (
-          <Image
-            alt="settings-button"
-            src="assets/svgs/IconSettings.svg"
-            width={18}
-            height={18}
-            onClick={onClick}
-          />
         )}
       </div>
     </>

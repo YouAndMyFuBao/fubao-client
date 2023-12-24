@@ -11,28 +11,51 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const letterWritePage: Story = {
+export const writeLetterPage: Story = {
   args: {
     leftBackPage: true,
     children: '편지쓰기',
   },
 };
 
-export const letterPreview: Story = {
+export const previewMyLetterPage: Story = {
   args: {
-    leftBackPage: true,
     rightDoneButton: true,
+  },
+};
+
+export const previewLetterPage: Story = {
+  args: {
+    rightCloseButton: true,
   },
 };
 
 export const mailboxPage: Story = {
   args: {
     leftBackPage: true,
-    rightSettingsButton: true,
+    children: '푸바오 우체통',
   },
 };
 
-export const editMyLetterPage: Story = {
+export const mailboxDetailPage: Story = {
+  args: {
+    leftBackPage: true,
+  },
+};
+
+export const allMyLetterPage: Story = {
+  args: {
+    rightCloseButton: true,
+  },
+};
+
+export const allMyLetterDetilPage: Story = {
+  args: {
+    leftBackPage: true,
+  },
+};
+
+export const editAllMyLetterPage: Story = {
   args: {
     leftBackPage: true,
   },
