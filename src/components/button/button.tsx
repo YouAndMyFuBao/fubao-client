@@ -1,7 +1,7 @@
 import * as Style from './button.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variants: 'primary' | 'secondary' | 'bottom-sheet-primary' | 'bottom-sheet-secondary';
+  variants: 'primary' | 'secondary' | 'green-primary' | 'green-secondary' | 'login';
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
   onClick?: () => void;
