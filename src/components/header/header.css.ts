@@ -11,10 +11,12 @@ export const title = css({
   color: '#fff',
   fontSize: '20',
   verticalAlign: '25%',
+  fontWeight: '900',
+  marginLeft: '8px',
 });
 
 export const rightButton = css({
   color: '#fff',
-  fontSize: '20',
+  fontSize: '16',
   lineHeight: '1.3',
 });

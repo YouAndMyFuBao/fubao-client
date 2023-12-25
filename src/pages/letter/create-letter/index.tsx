@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { createLetterStyles } from './index.css';
 import { useLetterContext } from '../../../hooks/useLetterContext';
+import Header from '@/components/header/header';
 
 export default function CreateLetter() {
   const { letterImage, setLetterImage, letterText, setLetterText } = useLetterContext();
@@ -37,6 +38,7 @@ export default function CreateLetter() {
   return (
     <>
       <div className="wrapper">
+        <Header leftBackPage>푸바오에게 편지쓰기</Header>
         <div className="letter-wrapper" css={createLetterStyles.postWrapper}>
           {letterImage ? (
             <div className="image-wrapper">

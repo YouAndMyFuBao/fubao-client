@@ -14,7 +14,7 @@ type Story = StoryObj<typeof meta>;
 export const writeLetterPage: Story = {
   args: {
     leftBackPage: true,
-    children: '편지쓰기',
+    children: '푸바오에게 편지쓰기',
   },
 };
 
