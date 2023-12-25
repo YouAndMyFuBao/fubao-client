@@ -20,6 +20,9 @@ export const bottomSheetText = css({
   margin: '24px 0',
   color: '#1E212B',
   fontWeight: '600',
+  fontSize: '18px',
+  lineHeight: '1.4',
+  paddingLeft: '6px',
 });
 
 export const Button = css({
@@ -38,7 +41,13 @@ export const closeButton = css(Button, {
   backgroundColor: '#A7C2B1',
 });
 
-export const deleteButton = css(Button, {
+export const primaryButton = css(Button, {
   backgroundColor: '#009436',
   color: '#fff',
+});
+
+export const kakaoLoginButtonWrapper = css(Button, {
+  display: 'flex',
+  gap: '28px',
+  fontSize: '15px',
 });
