@@ -1,8 +1,8 @@
-interface ItemProps {
+interface TextProps {
   text: string;
 }
 
-export const LineBreak = ({ text }: ItemProps) => {
+export const LineBreak = ({ text }: TextProps) => {
   return (
     <p>
       {text.split('\n').map((txt) => (

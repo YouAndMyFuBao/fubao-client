@@ -1,3 +1,4 @@
+import { LineBreak } from '@/utils/textLineBreak';
 import { IconKaKao } from '../../../public/assets/svgs';
 import Button from '../button';
 import * as Style from './bottomSheet.css';
@@ -24,7 +25,9 @@ export default function BottomSheet({
       {variants === 'common' && (
         <div className="bottom-sheet-wrapper" css={Style.wrapper}>
           <div css={Style.bottomSheetBar}></div>
-          <strong css={Style.bottomSheetText}>{children}</strong>
+          <strong css={Style.bottomSheetText}>
+            <LineBreak text={children}></LineBreak>
+          </strong>
           <div className="group-button" css={Style.groupButton}>
             <Button variants="green-secondary" onClick={onClickClose}>
               닫기
