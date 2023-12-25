@@ -1,3 +1,4 @@
+import Button from '../button';
 import * as Style from './bottomSheet.css';
 
 interface BottomSheetProps {
@@ -13,12 +14,12 @@ export default function BottomSheet({ children, onClickClose, onClickDelete }: B
         <div css={Style.bottomSheetBar}></div>
         <strong css={Style.bottomSheetText}>{children}</strong>
         <div className="group-button" css={Style.groupButton}>
-          <button css={Style.closeButton} onClick={onClickClose}>
+          <Button variants="green-secondary" onClick={onClickClose}>
             닫기
-          </button>
-          <button css={Style.deleteButton} onClick={onClickDelete}>
+          </Button>
+          <Button variants="green-primary" onClick={onClickDelete}>
             삭제하기
-          </button>
+          </Button>
         </div>
       </div>
     </>
