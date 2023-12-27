@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 
 export const snackbarWrapper = css({
+  width: '354px',
   display: 'flex',
   justifyContent: 'center',
   borderRadius: '12px',
