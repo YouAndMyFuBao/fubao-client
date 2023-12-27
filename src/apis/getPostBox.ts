@@ -1,9 +1,9 @@
 import { baseAxios } from './baseAxios';
-import { APIResponse, PostBoxData } from '@/data/type';
+import { APIResponse, InfinitePostData } from '@/data/type';
 
-export const getPostBox = async (page: number, size: number) => {
+export const getPostBox = async ({ pageParam = 0 }) => {
   const {
     data: { data },
-  } = await baseAxios.get<APIResponse<PostBoxData[]>>(`/api/posts?size=${size}&page=${page}`);
+  } = await baseAxios.get<APIResponse<InfinitePostData>>(`/api/posts?size=10&page=${pageParam}`);
   return data;
 };
