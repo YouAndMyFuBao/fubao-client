@@ -11,7 +11,7 @@ export const buttonWrapper = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  gap: '2.5px',
+  gap: '10px',
   cursor: 'pointer',
   fontSize: '16px',
   fontWeight: '600',
