@@ -5,12 +5,10 @@ import { useRouter } from 'next/navigation';
 import Post from './_components/post';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getPostBox } from '@/apis/getPostBox';
-// import { useRef } from 'react';
 import useIntersect from '@/hooks/useIntersect';
 
 const PostBox = () => {
   const router = useRouter();
-  // const observRef = useRef(null);
   const {
     data: postBoxData,
     isFetching,

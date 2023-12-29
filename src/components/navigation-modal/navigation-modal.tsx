@@ -46,6 +46,7 @@ export default function NavigationModal({ isOpen, onClose }: NavigationModalProp
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 1000 }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
+          css={navigationModal.motion}
         >
           <div css={navigationModal.base}>
             <header css={navigationModal.modalHeader}>
