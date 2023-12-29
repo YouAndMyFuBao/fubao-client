@@ -33,3 +33,33 @@ export const modalButton = css({
   gap: '10px',
   cursor: 'pointer',
 });
+
+export const memberManagement = css({
+  display: 'flex',
+  marginTop: '439px',
+  gap: '40px',
+});
+
+export const memberManagementButton = css({
+  color: 'rgba(255, 255, 255, 0.50)',
+  fontWeight: '800',
+  fontSize: '18px',
+});
+
+export const example = css({
+  position: 'relative',
+  zIndex: 100,
+  borderRadius: '20px',
+  backgroundColor: 'red',
+  width: '300px',
+  height: '50px',
+});
+
+export const exampleSecond = css({
+  position: 'relative',
+  zIndex: 100,
+  borderRadius: '20px',
+  backgroundColor: 'blue',
+  width: '300px',
+  height: '50px',
+});

@@ -8,9 +8,11 @@ const Redirect = () => {
 
   const getAuth = async (code: string) => {
     const data = await postLogin(code);
-    const accessToken = data.data.accessToken;
+    const accessToken = data.accessToken;
+    const refreshToken = data.refreshToken;
     if ({ data }) {
       setCookie('accessToken', accessToken);
+      setCookie('refreshToken', refreshToken);
     }
     router.push('/home');
   };

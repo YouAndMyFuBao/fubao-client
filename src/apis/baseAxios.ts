@@ -6,10 +6,10 @@ export const baseAxios = axios.create({
 });
 
 baseAxios.interceptors.request.use((config) => {
-  const jwtToken = getCookie('jwtToken') as string;
+  const accessToken = getCookie('accessToken') as string;
 
-  if (jwtToken) {
-    config.headers.Authorization = `Bearer ${jwtToken}`;
+  if (accessToken) {
+    config.headers.Authorization = `Bearer ${accessToken}`;
   }
 
   return config;

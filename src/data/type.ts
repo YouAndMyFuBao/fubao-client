@@ -40,3 +40,11 @@ export type InfinitePostData = {
   first: boolean;
   empty: boolean;
 };
+
+export type Logout = {
+  data: string;
+};
+
+export type Deactivation = {
+  data: string;
+};
