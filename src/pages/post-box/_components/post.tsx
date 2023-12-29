@@ -1,18 +1,22 @@
+import { PostData } from '@/data/type';
 import CreatedAtTag from './created-at-tag';
 import * as Style from './post.css';
+import { useRouter } from 'next/router';
 
 interface PostProps {
-  imgSrc: string;
-  onClick?: () => void;
+  post: PostData;
 }
 
-export default function Post({ imgSrc, onClick }: PostProps) {
+export default function Post({ post }: PostProps) {
+  const { date, imageUrl, postId } = post;
+  const router = useRouter();
+
   return (
-    <article onClick={onClick} css={Style.container}>
+    <article onClick={() => router.push(`/letter/${postId}`)} css={Style.container}>
       <div css={Style.base}>
-        <CreatedAtTag time="1시간 전" />
+        <CreatedAtTag time={date} />
         <img
-          src={imgSrc}
+          src={imageUrl}
           style={{ zIndex: '-10px', border: '1px solid #000' }}
           width={114}
           height={114}

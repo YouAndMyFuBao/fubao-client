@@ -28,13 +28,17 @@ export const variantsCss: Record<ButtonProps['variants'], SerializedStyles> = {
     color: '#1E212B',
     boxShadow: '0px 0px 16px 2px rgba(0, 0, 0, 0.12)',
   }),
-  'modal-primary': css({
+  'green-primary': css({
     backgroundColor: '#009436',
     color: 'white',
   }),
-  'modal-secondary': css({
+  'green-secondary': css({
     backgroundColor: '#A7C2B1',
     color: '#1E212B',
+  }),
+  login: css({
+    backgroundColor: '#FEE500',
+    color: '#000',
   }),
 };
 

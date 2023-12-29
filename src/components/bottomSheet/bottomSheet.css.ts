@@ -7,7 +7,7 @@ export const wrapper = css({
   borderRadius: '20px',
 });
 
-export const ModalBar = css({
+export const bottomSheetBar = css({
   margin: '0 auto',
   width: '48px',
   height: '4px',
@@ -15,11 +15,14 @@ export const ModalBar = css({
   backgroundColor: '#E5E8EB',
 });
 
-export const modalText = css({
+export const bottomSheetText = css({
   display: 'inline-block',
   margin: '24px 0',
   color: '#1E212B',
   fontWeight: '600',
+  fontSize: '18px',
+  lineHeight: '1.4',
+  paddingLeft: '6px',
 });
 
 export const Button = css({
@@ -38,7 +41,13 @@ export const closeButton = css(Button, {
   backgroundColor: '#A7C2B1',
 });
 
-export const deleteButton = css(Button, {
+export const primaryButton = css(Button, {
   backgroundColor: '#009436',
   color: '#fff',
+});
+
+export const kakaoLoginButtonWrapper = css(Button, {
+  display: 'flex',
+  gap: '28px',
+  fontSize: '15px',
 });
