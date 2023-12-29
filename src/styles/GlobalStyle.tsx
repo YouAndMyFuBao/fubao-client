@@ -138,6 +138,7 @@ const styles = css`
   button {
     border: none;
     cursor: pointer;
+    background: none;
   }
 
   a {
