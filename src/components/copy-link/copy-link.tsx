@@ -29,7 +29,7 @@ export default function CopyLink() {
     <div css={Style.wrapper}>
       <div css={Style.buttonWrapper} onClick={handleCopyLinkClick}>
         <IconLink />
-        링크 공유하기
+        링크 복사하기
       </div>
       {isCopied && <div css={Style.copiedSnackbar}>링크가 복사되었어요!</div>}
     </div>
