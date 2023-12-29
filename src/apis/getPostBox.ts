@@ -5,5 +5,6 @@ export const getPostBox = async ({ pageParam = 0 }) => {
   const {
     data: { data },
   } = await baseAxios.get<APIResponse<InfinitePostData>>(`/api/posts?size=10&page=${pageParam}`);
+
   return data;
 };

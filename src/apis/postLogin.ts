@@ -12,5 +12,5 @@ export const postLogin = async (authorizationCode: string) => {
   >('api/auth/kakao', {
     authorizationCode,
   });
-  return data;
+  return data.data;
 };

@@ -13392,6 +13392,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"scratchable@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "scratchable@npm:0.0.4"
+  checksum: 2fce203d2e3eb025d9a12d8c537446ded97152aa6b6116e532491751111f4cd8d60e3d657ab8f8f69584c7d2458450f832d0ec90cfd80a8d288df9cfa4ec8311
+  languageName: node
+  linkType: hard
+
 "semver@npm:2 || 3 || 4 || 5, semver@npm:^5.6.0":
   version: 5.7.2
   resolution: "semver@npm:5.7.2"
@@ -15377,6 +15384,7 @@ __metadata:
     react-dom: "npm:^18"
     react-hook-form: "npm:^7.48.2"
     react-query: "npm:^3.39.3"
+    scratchable: "npm:^0.0.4"
     storybook: "npm:^7.6.6"
     typescript: "npm:^5"
     webpack: "npm:^5.89.0"

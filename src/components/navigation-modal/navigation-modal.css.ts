@@ -1,14 +1,17 @@
 import { css } from '@emotion/react';
 
-export const base = css({
-  height: '100vh',
-  background: '#1E212B',
+export const motion = css({
   position: 'fixed',
   top: 0,
-  zIndex: 10,
+  zIndex: 100,
   width: '100%',
   minWidth: '390px',
   maxWidth: '450px',
+});
+
+export const base = css({
+  height: '100vh',
+  background: '#1E212B',
   padding: '22px',
   color: 'white',
 });
