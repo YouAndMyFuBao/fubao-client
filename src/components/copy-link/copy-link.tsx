@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Snackbar from '../snackbar/snackbar';
 import { IconLink } from '../../../public/assets/svgs';
 import * as Style from './copy-link.css';
 
@@ -31,7 +32,7 @@ export default function CopyLink() {
         <IconLink />
         링크 복사하기
       </div>
-      {isCopied && <div css={Style.copiedSnackbar}>링크가 복사되었어요!</div>}
+      {isCopied && <Snackbar variants="letter" additionalCss={[Style.copiedSnackbar]} />}
     </div>
   );
 }
