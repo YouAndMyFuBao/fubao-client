@@ -67,7 +67,6 @@ export const mainText = {
 
     '&::placeholder': {
       lineHeight: '1.7',
-      fontFamily: 'letterFont',
     },
   }),
   pPlaceholder: {

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useLetterContext } from '@/hooks/useLetterContext';
-import { LineBreak } from '@/utils/textLineBreak';
 import { letterFont } from '../../../public/fonts/fonts';
 import * as Style from './letter-card.css';
 import { IconDelete, IconUploadImage } from '../../../public/assets/svgs';
@@ -71,25 +70,17 @@ export default function LetterCard(props: LetterCardProps) {
               />
             </div>
           )}
-
           <div css={Style.mainText.wrapper}>
             <textarea
               value={letterText}
               css={Style.mainText.textarea}
               onChange={handleInputChange}
-              // placeholder={
-              //   '푸바오에게 보내는 내용을 입력해 주세요. \n보낸 편지는 푸바오가 직접 읽을거예요!'
-              // }
-              className={letterFont.className}
+              placeholder={
+                '푸바오에게 보내는 내용을 입력해 주세요. \n보낸 편지는 푸바오가 직접 읽을거예요!'
+              }
+              style={letterFont.style}
+              cols={5}
             ></textarea>
-            {!letterText && (
-              <LineBreak
-                text={
-                  '푸바오에게 보내는 내용을 입력해 주세요. \n 보낸 편지는 푸바오가 직접 읽을거예요! '
-                }
-                css={Style.mainText.pPlaceholder}
-              />
-            )}
           </div>
           <div css={Style.footer.wrapper}>
             <p css={Style.footer.textCounter}>{`(${letterTextLength} / 150)`}</p>
