@@ -16,22 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    variants: 'primary',
-    size: 'small',
+    variants: 'one-button-enable-none',
     children: 'Button',
   },
 };
-
-// export const Middle: Story = {
-//   args: {
-//     size: 'medium',
-//     children: 'Button',
-//   },
-// };
-
-// export const Large: Story = {
-//   args: {
-//     size: 'large',
-//     children: 'Button',
-//   },
-// };
