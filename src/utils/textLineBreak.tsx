@@ -2,11 +2,12 @@ import React from 'react';
 
 interface TextProps {
   text: string;
+  css?: any;
 }
 
-export const LineBreak = ({ text }: TextProps) => {
+export const LineBreak = ({ text, ...props }: TextProps) => {
   return (
-    <p>
+    <p {...props}>
       {text.split('\n').map((txt, index) => (
         <React.Fragment key={index}>
           {txt}
