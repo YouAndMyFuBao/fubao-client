@@ -79,7 +79,6 @@ export default function LetterCard(props: LetterCardProps) {
                 '푸바오에게 보내는 내용을 입력해 주세요. \n보낸 편지는 푸바오가 직접 읽을거예요!'
               }
               style={letterFont.style}
-              cols={5}
             ></textarea>
           </div>
           <div css={Style.footer.wrapper}>

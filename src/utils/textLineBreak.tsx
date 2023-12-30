@@ -2,7 +2,6 @@ import React from 'react';
 
 interface TextProps {
   text: string;
-  css?: any;
 }
 
 export const LineBreak = ({ text, ...props }: TextProps) => {
