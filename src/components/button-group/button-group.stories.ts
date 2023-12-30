@@ -18,6 +18,6 @@ export const Example: Story = {
   args: {
     variants: 'two-button-enable-black',
     size: 'small',
-    children: 'ButtonGroup',
+    children: 'Group',
   },
 };
