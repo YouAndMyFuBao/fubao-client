@@ -5,12 +5,20 @@ import { letterFont } from '../../../public/fonts/fonts';
 import * as Style from './letter-card.css';
 import { IconDelete, IconUploadImage } from '../../../public/assets/svgs';
 
-interface LetterCardProp {
-  variants: 'textCount' | 'date';
-  textCounter?: string;
+interface TextCountCardProps {
+  variant: 'textCount';
 }
 
-export default function LetterCard({ variants }: LetterCardProp) {
+interface DateCardProps {
+  variant: 'date';
+  apiImage: string;
+  apiText: string;
+  date: string;
+}
+
+type LetterCardProps = TextCountCardProps | DateCardProps;
+
+export default function LetterCard(props: LetterCardProps) {
   const { letterImage, setLetterImage, letterText, setLetterText } = useLetterContext();
   const [letterTextLength, setLetterTextLength] = useState<number>(0);
 
@@ -22,7 +30,7 @@ export default function LetterCard({ variants }: LetterCardProp) {
   };
 
   const handleDeleteButtonClick = () => {
-    setLetterImage(null);
+    setLetterImage(undefined);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -35,7 +43,7 @@ export default function LetterCard({ variants }: LetterCardProp) {
 
   return (
     <>
-      {variants === 'textCount' && (
+      {props.variant === 'textCount' && (
         <div css={Style.letterWrapper} className={letterFont.className}>
           {letterImage ? (
             <div css={Style.imageUploaded.wrapper}>
@@ -85,6 +93,19 @@ export default function LetterCard({ variants }: LetterCardProp) {
           </div>
           <div css={Style.footer.wrapper}>
             <p css={Style.footer.textCounter}>{`(${letterTextLength} / 150)`}</p>
+          </div>
+        </div>
+      )}
+      {props.variant === 'date' && (
+        <div css={Style.letterWrapper} className={letterFont.className}>
+          <div css={Style.imageUploaded}>
+            <div css={Style.imageUploaded.wrapper}>
+              <img src={props.apiImage} css={Style.imageUploaded.image} alt="postImageSelected" />
+            </div>
+          </div>
+          <div css={Style.mainText.wrapper}>{props.apiText}</div>
+          <div css={Style.footer.wrapper}>
+            <p css={Style.footer.date}>{props.date}</p>
           </div>
         </div>
       )}

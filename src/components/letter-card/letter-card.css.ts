@@ -56,6 +56,7 @@ export const noneImageUploaded = {
 export const mainText = {
   wrapper: css({
     position: 'relative',
+    height: '100px',
   }),
   textarea: css({
     border: 'none',
