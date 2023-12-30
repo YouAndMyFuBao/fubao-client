@@ -12,7 +12,7 @@ interface DateCardProps {
   variant: 'date';
   apiImage: string;
   apiText: string;
-  date: string;
+  apiDate: string;
 }
 
 type LetterCardProps = TextCountCardProps | DateCardProps;
@@ -96,7 +96,7 @@ export default function LetterCard(props: LetterCardProps) {
           </div>
           <div css={Style.mainText.wrapper}>{props.apiText}</div>
           <div css={Style.footer.wrapper}>
-            <p css={Style.footer.date}>{props.date}</p>
+            <p css={Style.footer.date}>{props.apiDate}</p>
           </div>
         </div>
       )}
