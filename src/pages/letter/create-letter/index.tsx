@@ -6,7 +6,7 @@ export default function CreateLetter() {
     <>
       <div className="wrapper">
         <Header leftBackPage>푸바오에게 편지쓰기</Header>
-        <LetterCard variants="textCount" />
+        <LetterCard variant="textCount" />
       </div>
     </>
   );
