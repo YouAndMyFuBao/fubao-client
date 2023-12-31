@@ -6,8 +6,8 @@ export const letterWrapper = css({
   padding: '16px',
   display: 'flex',
   flexDirection: 'column',
+  color: '#1E212B',
   gap: '16px',
-  color: '#969696',
   fontSize: '14px',
   backgroundColor: 'white',
 });
@@ -85,5 +85,7 @@ export const footer = {
   textCounter: css({
     textAlign: 'right',
   }),
-  date: css({}),
+  date: css({
+    color: '#1E212B',
+  }),
 };
