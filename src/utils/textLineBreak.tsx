@@ -1,15 +1,17 @@
+import React from 'react';
+
 interface TextProps {
   text: string;
 }
 
-export const LineBreak = ({ text }: TextProps) => {
+export const LineBreak = ({ text, ...props }: TextProps) => {
   return (
-    <p>
-      {text.split('\n').map((txt) => (
-        <>
+    <p {...props}>
+      {text.split('\n').map((txt, index) => (
+        <React.Fragment key={index}>
           {txt}
-          <br />
-        </>
+          {index !== text.split('\n').length - 1 && <br />}
+        </React.Fragment>
       ))}
     </p>
   );

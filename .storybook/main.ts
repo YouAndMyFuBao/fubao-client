@@ -24,6 +24,12 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
+  staticDirs: [
+    {
+      from: '../public/fonts',
+      to: 'public/fonts',
+    },
+  ],
   webpackFinal: async (config) => {
     if (config.resolve) {
       config.resolve.alias = {

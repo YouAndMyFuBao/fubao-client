@@ -1,14 +1,14 @@
 import React, { createContext, useState, useContext, ReactNode, SetStateAction } from 'react';
 
 interface LetterContextProps {
-  letterImage: File | null;
-  setLetterImage: React.Dispatch<SetStateAction<File | null>>;
+  letterImage: File | undefined;
+  setLetterImage: React.Dispatch<SetStateAction<File | undefined>>;
   letterText: string;
   setLetterText: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const initialLetterContext: LetterContextProps = {
-  letterImage: null,
+  letterImage: undefined,
   setLetterImage: () => {},
   letterText: '',
   setLetterText: () => {},
@@ -21,7 +21,7 @@ interface LetterContextProviderProps {
 }
 
 export const LetterContextProvider: React.FC<LetterContextProviderProps> = ({ children }) => {
-  const [letterImage, setLetterImage] = useState<File | null>(null);
+  const [letterImage, setLetterImage] = useState<File | undefined>(undefined);
   const [letterText, setLetterText] = useState<string>('');
 
   const value: LetterContextProps = {
