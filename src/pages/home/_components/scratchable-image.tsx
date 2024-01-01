@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Scratchable, ScratchableEvent } from 'scratchable';
 import * as Style from './scratchable-image.css';
+import { postFubaoLove } from '@/apis/postFubaoLove';
 
 interface ScratchableImageProps {
   onScratchEnd: () => void;
@@ -31,6 +32,8 @@ export default function ScratchableImage({ onScratchEnd }: ScratchableImageProps
       if (e.percentage > 0.5) {
         scratchable.destroy();
         onScratchEnd();
+        postFubaoLove();
+        console.log('푸바오 사랑 보내기 완료');
       }
     };
 
