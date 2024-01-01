@@ -49,6 +49,10 @@ export type Deactivation = {
   data: string;
 };
 
+export type DeliverLove = {
+  message: string;
+};
+
 export type ReceivedLove = {
   love: number;
 };
