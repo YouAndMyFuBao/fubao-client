@@ -48,3 +48,7 @@ export type Logout = {
 export type Deactivation = {
   data: string;
 };
+
+export type ReceivedLove = {
+  love: number;
+};
