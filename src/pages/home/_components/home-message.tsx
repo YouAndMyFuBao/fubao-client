@@ -1,14 +1,18 @@
 import { motion } from 'framer-motion';
 import * as Style from './home-message.css';
-
+import { useQuery } from '@tanstack/react-query';
+import { getFubaoLove } from '../../../apis/getFubaoLove';
 interface HomeMessageProps {
   scratchableEnd: boolean;
 }
 
 export default function HomeMessage({ scratchableEnd }: HomeMessageProps) {
-  const heartCount = 10;
+  const { data: loveData } = useQuery({
+    queryKey: ['fubaoLove'],
+    queryFn: getFubaoLove,
+  });
   const beforeMessage = `하트를 문질러서 \n 푸바오를 만나보세요 !`;
-  const afterMessage = `지금까지 바오에게 \n 전달된 사랑은 총 ${heartCount} 개`;
+  const afterMessage = `지금까지 바오에게 \n 전달된 사랑은 총 ${loveData?.data.love} 개`;
   return (
     <motion.div
       animate={{
