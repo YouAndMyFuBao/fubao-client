@@ -14,7 +14,7 @@ export const base = css({
 });
 
 export const sizeCss: Record<NonNullable<ButtonGroupProps['size']>, SerializedStyles> = {
-  small: css({ width: '100px', height: '56px' }),
+  small: css({ width: '156px', height: '56px' }),
   medium: css({ width: '172px', height: '56px' }),
 };
 
