@@ -11,7 +11,7 @@ export const base = css({
   fontSize: '17px',
   fontWeight: '600',
   borderRadius: '16px',
-  width: '354px',
+  width: '100%',
   height: '56px',
 });
 
