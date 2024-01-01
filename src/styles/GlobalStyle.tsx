@@ -164,6 +164,12 @@ const styles = css`
     -o-user-drag: none;
     -user-drag: none;
   }
+  body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 `;
 
 const GlobalStyle = () => <Global styles={styles} />;
