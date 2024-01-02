@@ -11,6 +11,7 @@ import LetterCard from '@/components/letter-card/letter-card';
 import { useGetPost } from '@/apis/getPost';
 import { APIResponse, PostData } from '@/data/type';
 import DateTimeFormat from '@/utils/dateTimeFormat';
+import { useRouter } from 'next/router';
 
 function CheckDataValidity({ data }: { data?: APIResponse<PostData> }) {
   if (!data) return;
@@ -19,15 +20,16 @@ function CheckDataValidity({ data }: { data?: APIResponse<PostData> }) {
 }
 
 export default function PreviewLetter() {
+  const router = useRouter();
   const [isBackgroundHandVersion, setIsBackgroundHandVersion] = useState(true);
   const postId = 1;
   const { data } = useGetPost({ postId });
   CheckDataValidity({ data });
-  console.log('data', data);
+  // console.log('data', data);
 
   useEffect(() => {
     const randomNumber = Math.random();
-    setIsBackgroundHandVersion(randomNumber < 0.5 ? true : false);
+    setIsBackgroundHandVersion(randomNumber < 0.9 ? true : false);
     console.log('isBackgroundHandVersion', isBackgroundHandVersion);
   }, [isBackgroundHandVersion]);
 
@@ -86,7 +88,7 @@ export default function PreviewLetter() {
           <CopyLink />
           <div>
             <button>이미지 저장</button>
-            <button>수정하기</button>
+            <button onClick={() => router.push('/letter/edit')}>수정하기</button>
           </div>
         </div>
       </div>
