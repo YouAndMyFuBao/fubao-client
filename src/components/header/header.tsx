@@ -1,5 +1,6 @@
 import * as Style from './header.css';
 import { IconArrowBack } from '../../../public/assets/svgs';
+import { useRouter } from 'next/router';
 
 interface HeaderProps {
   children?: string;
@@ -16,11 +17,20 @@ export default function Header({
   rightDoneButton,
   rightCloseButton,
 }: HeaderProps) {
+  const router = useRouter();
+
+  const handleBackClick = () => {
+    router.back();
+  };
   return (
     <>
       <div css={Style.headerWrapper} className="header">
         <div>
-          {leftBackPage && <IconArrowBack alt="exit-button" />}
+          {leftBackPage && (
+            <button onClick={handleBackClick}>
+              <IconArrowBack alt="exit-button" />
+            </button>
+          )}
           {children && <h2 css={Style.title}>{children}</h2>}
         </div>
         {rightDoneButton && (
