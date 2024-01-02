@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLetterContext } from '@/hooks/useLetterContext';
 import { letterFont } from '../../../public/fonts/fonts';
 import * as Style from './letter-card.css';
@@ -6,6 +6,9 @@ import { IconDelete, IconUploadImage } from '../../../public/assets/svgs';
 
 interface TextCountCardProps {
   variant: 'textCount';
+  apiImage?: string;
+  apiText?: string;
+  apiDate?: string;
 }
 
 interface DateCardProps {
@@ -20,6 +23,13 @@ type LetterCardProps = TextCountCardProps | DateCardProps;
 export default function LetterCard(props: LetterCardProps) {
   const { letterImage, setLetterImage, letterText, setLetterText } = useLetterContext();
   const [letterTextLength, setLetterTextLength] = useState<number>(0);
+
+  useEffect(() => {
+    if (props.apiText) {
+      setLetterText(props.apiText);
+      setLetterTextLength(props.apiText.length);
+    }
+  }, []);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -40,36 +50,57 @@ export default function LetterCard(props: LetterCardProps) {
     setLetterTextLength(e.target.value.length);
   };
 
+  const ConditionalRenderTextCount = () => {
+    if (letterImage) {
+      console.log('letterImage', letterImage);
+      return (
+        <div css={Style.imageUploaded.wrapper}>
+          <img
+            src={URL.createObjectURL(letterImage)}
+            css={Style.imageUploaded.image}
+            alt="postImageSelected"
+          />
+          <button type="button" onClick={handleDeleteButtonClick}>
+            <IconDelete css={Style.imageUploaded.deleteImageIcon} />
+          </button>
+        </div>
+      );
+    }
+    if (props.apiImage) {
+      console.log('props.apiImage', props.apiImage);
+      return (
+        <div css={Style.imageUploaded}>
+          <div css={Style.imageUploaded.wrapper}>
+            <img src={props.apiImage} css={Style.imageUploaded.image} alt="postImageSelected" />
+          </div>
+        </div>
+      );
+    }
+    if (!letterImage && !props.apiImage) {
+      console.log('letterImage', letterImage, 'props.apiImage', props.apiImage);
+      return (
+        <div css={Style.noneImageUploaded.wrapper}>
+          <label htmlFor="file" css={Style.noneImageUploaded.label}>
+            <IconUploadImage css={Style.noneImageUploaded.icon} />
+          </label>
+          <input
+            type="file"
+            id="file"
+            accept="image/*"
+            required
+            onChange={handleImageChange}
+            css={Style.noneImageUploaded.input}
+          />
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       {props.variant === 'textCount' && (
         <div css={Style.letterWrapper} className={letterFont.className}>
-          {letterImage ? (
-            <div css={Style.imageUploaded.wrapper}>
-              <img
-                src={URL.createObjectURL(letterImage)}
-                css={Style.imageUploaded.image}
-                alt="postImageSelected"
-              />
-              <button type="button" onClick={handleDeleteButtonClick}>
-                <IconDelete css={Style.imageUploaded.deleteImageIcon} />
-              </button>
-            </div>
-          ) : (
-            <div css={Style.noneImageUploaded.wrapper}>
-              <label htmlFor="file" css={Style.noneImageUploaded.label}>
-                <IconUploadImage css={Style.noneImageUploaded.icon} />
-              </label>
-              <input
-                type="file"
-                id="file"
-                accept="image/*"
-                required
-                onChange={handleImageChange}
-                css={Style.noneImageUploaded.input}
-              />
-            </div>
-          )}
+          {ConditionalRenderTextCount()}
           <div css={Style.mainText.wrapper}>
             <textarea
               value={letterText}
