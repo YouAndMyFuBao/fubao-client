@@ -10,6 +10,7 @@ import CopyLink from '@/components/copy-link/copy-link';
 import LetterCard from '@/components/letter-card/letter-card';
 import { useGetPost } from '@/apis/getPost';
 import { APIResponse, PostData } from '@/data/type';
+import DateTimeFormat from '@/utils/dateTimeFormat';
 
 function CheckDataValidity({ data }: { data?: APIResponse<PostData> }) {
   if (!data) return;
@@ -53,9 +54,9 @@ export default function PreviewLetter() {
         <div css={Style.mainLetterCard.hand}>
           <LetterCard
             variant="date"
-            apiDate={data?.data.date}
             apiImage={data?.data.imageUrl}
             apiText={data?.data.content}
+            apiDate={DateTimeFormat(data.data.date)}
           />
         </div>
       );
@@ -64,9 +65,9 @@ export default function PreviewLetter() {
         <div css={Style.mainLetterCard.head}>
           <LetterCard
             variant="date"
-            apiDate={data?.data.date}
             apiImage={data?.data.imageUrl}
             apiText={data?.data.content}
+            apiDate={DateTimeFormat(data.data.date)}
           />
         </div>
       );
