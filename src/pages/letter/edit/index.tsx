@@ -2,20 +2,41 @@ import Header from '@/components/header/header';
 import LetterCard from '@/components/letter-card/letter-card';
 import * as Style from './index.css';
 import { useGetPost } from '@/apis/getPost';
-import { APIResponse, PostData } from '@/data/type';
 import DateTimeFormat from '@/utils/dateTimeFormat';
-
-function CheckDataValidity({ data }: { data?: APIResponse<PostData> }) {
-  if (!data) return;
-
-  return data;
-}
+import { useLetterContext } from '@/hooks/useLetterContext';
+import { patchPost } from '@/apis/patchPost';
+import { useRouter } from 'next/router';
+import { useMutation } from '@tanstack/react-query';
 
 export default function Edit() {
-  const postId = 1;
-  const { data } = useGetPost({ postId });
-  CheckDataValidity({ data });
-  console.log('data', data);
+  const router = useRouter();
+  // const letterId = Number(router.query.postId);
+  const { letterImage, letterText } = useLetterContext();
+
+  const letterId = 81;
+  const { data } = useGetPost({ postId: letterId });
+
+  const { mutate, data: patchData } = useMutation({
+    mutationKey: ['patchPost', letterId],
+    mutationFn: () => patchPost({ postId: letterId, image: letterImage, content: letterText }),
+    onSuccess: (data) => {
+      console.log('success', data);
+      router.push(
+        {
+          pathname: `/letter/preview`,
+          query: {
+            postId: data.data.data.postId,
+          },
+        },
+        '/letter/preveiw',
+      );
+    },
+  });
+
+  const handleSubmitClick = async () => {
+    mutate();
+    console.log('patchData', patchData);
+  };
 
   return (
     <div>
@@ -30,7 +51,7 @@ export default function Edit() {
           />
         )}
       </div>
-      <button>편지 완성하기</button>
+      <button onClick={handleSubmitClick}>편지 완성하기</button>
     </div>
   );
 }
