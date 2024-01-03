@@ -8,29 +8,43 @@ import * as Style from './index.css';
 import { useEffect, useState } from 'react';
 import CopyLink from '@/components/copy-link/copy-link';
 import LetterCard from '@/components/letter-card/letter-card';
-import { useGetPost } from '@/apis/getPost';
+import { getPost } from '@/apis/getPost';
 import { APIResponse, PostData } from '@/data/type';
 import DateTimeFormat from '@/utils/dateTimeFormat';
 import { useRouter } from 'next/router';
-
-function CheckDataValidity({ data }: { data?: APIResponse<PostData> }) {
-  if (!data) return;
-
-  return data;
-}
+import { useQuery } from '@tanstack/react-query';
 
 export default function PreviewLetter() {
   const router = useRouter();
+  const letterId = router.query.postId;
+
+  const { data } = useQuery({
+    queryKey: ['getPost', letterId],
+    queryFn: () => getPost({ postId: Number(letterId) }),
+  });
+
   const [isBackgroundHandVersion, setIsBackgroundHandVersion] = useState(true);
-  const postId = 1;
-  const { data } = useGetPost({ postId });
-  CheckDataValidity({ data });
-  // console.log('data', data);
+
+  // const divRef = useRef<HTMLDivElement>(null);
+
+  // const handleDownload = async () => {
+  //   if (!divRef.current) return;
+  //   try {
+  //     const div = divRef.current;
+  //     const canvas = await html2canvas(div, { scale: 2 });
+  //     canvas.toBlob((blob) => {
+  //       if (blob !== null) {
+  //         saveAs(blob, 'result.png');
+  //       }
+  //     });
+  //   } catch (error) {
+  //     console.error('Error converting div to image:', error);
+  //   }
+  // };
 
   useEffect(() => {
     const randomNumber = Math.random();
-    setIsBackgroundHandVersion(randomNumber < 0.9 ? true : false);
-    console.log('isBackgroundHandVersion', isBackgroundHandVersion);
+    setIsBackgroundHandVersion(randomNumber < 0.5 ? true : false);
   }, [isBackgroundHandVersion]);
 
   const backgroundHandVersion = () => {
@@ -77,7 +91,7 @@ export default function PreviewLetter() {
   };
 
   return (
-    <div>
+    <div id="letter-wrapper">
       <div css={Style.backgroundWrapper}>
         {isBackgroundHandVersion ? backgroundHandVersion() : backgroundHeadVersion()}
       </div>
@@ -88,7 +102,21 @@ export default function PreviewLetter() {
           <CopyLink />
           <div>
             <button>이미지 저장</button>
-            <button onClick={() => router.push('/letter/edit')}>수정하기</button>
+            <button
+              onClick={() =>
+                router.push(
+                  {
+                    pathname: '/letter/edit',
+                    query: {
+                      postId: letterId,
+                    },
+                  },
+                  '/letter/edit',
+                )
+              }
+            >
+              수정하기
+            </button>
           </div>
         </div>
       </div>
