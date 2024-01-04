@@ -2,7 +2,7 @@ import * as Style from './header.css';
 import { IconArrowBack } from '../../../public/assets/svgs';
 import { useRouter } from 'next/router';
 
-interface HeaderProps {
+interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: string;
   onClick?: () => void;
   leftBackPage?: boolean;
@@ -16,6 +16,7 @@ export default function Header({
   leftBackPage,
   rightDoneButton,
   rightCloseButton,
+  ...props
 }: HeaderProps) {
   const router = useRouter();
 
@@ -24,7 +25,7 @@ export default function Header({
   };
   return (
     <>
-      <div css={Style.headerWrapper} className="header">
+      <div css={Style.headerWrapper} className="header" {...props}>
         <div>
           {leftBackPage && (
             <button onClick={handleBackClick}>
@@ -34,14 +35,14 @@ export default function Header({
           {children && <h2 css={Style.title}>{children}</h2>}
         </div>
         {rightDoneButton && (
-          <strong css={Style.rightButton} onClick={onClick}>
+          <button css={Style.rightButton} onClick={onClick}>
             완료
-          </strong>
+          </button>
         )}
         {rightCloseButton && (
-          <strong css={Style.rightButton} onClick={onClick}>
+          <button css={Style.rightButton} onClick={onClick}>
             닫기
-          </strong>
+          </button>
         )}
       </div>
     </>

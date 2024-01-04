@@ -8,6 +8,7 @@ export const previewLetterStyles = {
 
 export const backgroundWrapper = css({
   position: 'relative',
+  height: '100vh',
 });
 
 export const background = {

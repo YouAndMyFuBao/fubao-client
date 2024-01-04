@@ -10,17 +10,17 @@ import { useMutation } from '@tanstack/react-query';
 
 export default function Edit() {
   const router = useRouter();
-  // const letterId = Number(router.query.postId);
+  const letterId = Number(router.query.postId);
   const { letterImage, letterText } = useLetterContext();
 
-  const letterId = 81;
+  // const letterId = 81;
   const { data } = useGetPost({ postId: letterId });
 
   const { mutate, data: patchData } = useMutation({
     mutationKey: ['patchPost', letterId],
     mutationFn: () => patchPost({ postId: letterId, image: letterImage, content: letterText }),
     onSuccess: (data) => {
-      console.log('success', data);
+      console.log('patchSuccess', data);
       router.push(
         {
           pathname: `/letter/preview`,
