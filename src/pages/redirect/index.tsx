@@ -11,8 +11,12 @@ const Redirect = () => {
     const accessToken = data.accessToken;
     const refreshToken = data.refreshToken;
     if ({ data }) {
-      setCookie('accessToken', accessToken);
-      setCookie('refreshToken', refreshToken);
+      setCookie('accessToken', accessToken, {
+        maxAge: 60 * 30,
+      });
+      setCookie('refreshToken', refreshToken, {
+        maxAge: 60 * 60 * 24 * 30,
+      });
     }
     router.push('/home');
   };
