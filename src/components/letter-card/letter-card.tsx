@@ -6,6 +6,7 @@ import { IconDelete, IconUploadImage } from '../../../public/assets/svgs';
 
 interface TextCountCardProps {
   variant: 'textCount';
+  style?: React.CSSProperties;
 }
 
 interface DateCardProps {
@@ -13,6 +14,7 @@ interface DateCardProps {
   apiImage: string;
   apiText: string;
   apiDate: string;
+  style?: React.CSSProperties;
 }
 
 type LetterCardProps = TextCountCardProps | DateCardProps;
@@ -43,7 +45,7 @@ export default function LetterCard(props: LetterCardProps) {
   return (
     <>
       {props.variant === 'textCount' && (
-        <div css={Style.letterWrapper} className={letterFont.className}>
+        <div css={Style.letterWrapper} className={letterFont.className} style={props.style}>
           {letterImage ? (
             <div css={Style.imageUploaded.wrapper}>
               <img
@@ -87,7 +89,7 @@ export default function LetterCard(props: LetterCardProps) {
         </div>
       )}
       {props.variant === 'date' && (
-        <div css={Style.letterWrapper} className={letterFont.className}>
+        <div css={Style.letterWrapper} className={letterFont.className} style={props.style}>
           <div css={Style.imageUploaded}>
             <div css={Style.imageUploaded.wrapper}>
               <img src={props.apiImage} css={Style.imageUploaded.image} alt="postImageSelected" />
