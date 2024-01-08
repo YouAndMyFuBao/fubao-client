@@ -55,6 +55,17 @@ export type Deactivation = {
   data: string;
 };
 
+export type MyLetterData = {
+  postId: number;
+  imageUrl: string;
+  content: string;
+  date: string;
+};
+
+export type DeletePost = {
+  data: string;
+};
+
 export type DeliverLove = {
   message: string;
 };
