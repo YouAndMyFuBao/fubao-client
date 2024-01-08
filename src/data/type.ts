@@ -59,3 +59,11 @@ export type MyLetterData = {
 export type DeletePost = {
   data: string;
 };
+
+export type DeliverLove = {
+  message: string;
+};
+
+export type ReceivedLove = {
+  love: number;
+};

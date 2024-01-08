@@ -35,8 +35,7 @@
     "scratchable": "^0.0.4",
     "slick-carousel": "^1.8.1",
     "storybook": "^7.6.6",
-    "swiper": "^11.0.5",
-    "uuid": "^9.0.1",
+    "vaul": "^0.8.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
