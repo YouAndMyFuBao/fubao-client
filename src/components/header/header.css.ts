@@ -1,9 +1,13 @@
 import { css } from '@emotion/react';
 
 export const headerWrapper = css({
-  margin: '7.5px 18px',
+  padding: '7.5px 18px',
   display: 'flex',
   justifyContent: 'space-between',
+  position: 'fixed',
+  top: '0',
+  // display: fixed하면 width: '100%' 적용이 안됨
+  width: '450px',
 });
 
 export const title = css({
@@ -17,6 +21,6 @@ export const title = css({
 
 export const rightButton = css({
   color: '#fff',
-  fontSize: '16',
+  fontSize: 16,
   lineHeight: '1.3',
 });

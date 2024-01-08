@@ -1,4 +1,4 @@
-import CreateLetter from './create-letter';
+import CreateLetter from './create';
 
 export default function Letter() {
   return (

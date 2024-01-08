@@ -8,4 +8,5 @@ export const base = css({
   height: '100vh',
   margin: '0 auto',
   backgroundColor: '#009436',
+  overflow: 'hidden',
 });
