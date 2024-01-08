@@ -2,7 +2,6 @@ import { css } from '@emotion/react';
 
 export const letterWrapper = css({
   border: '3px solid #1E212B',
-  margin: '28px 30px',
   padding: '16px',
   display: 'flex',
   flexDirection: 'column',

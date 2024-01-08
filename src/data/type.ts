@@ -12,6 +12,12 @@ export type PostData = {
   date: string;
 };
 
+export type PatchPostData = {
+  postId: number;
+  image?: File;
+  content?: string;
+};
+
 export type InfinitePostData = {
   content: PostData[];
   pageable: {
