@@ -25,7 +25,6 @@ const Redirect = () => {
     const { query } = router;
     const code = query.code as string;
     if (!code) {
-      console.log('카카오 인가코드 없음');
       return;
     }
     getAuth(code);
