@@ -61,6 +61,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-prettier", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:5.0.1"],\
           ["eslint-plugin-storybook", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:0.6.15"],\
           ["framer-motion", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:10.16.16"],\
+          ["html2canvas", "npm:1.4.1"],\
           ["husky", "npm:8.0.3"],\
           ["lint-staged", "npm:15.2.0"],\
           ["next", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:14.0.4"],\
@@ -76,6 +77,7 @@ const RAW_RUNTIME_STATE =
           ["scratchable", "npm:0.0.4"],\
           ["slick-carousel", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:1.8.1"],\
           ["storybook", "npm:7.6.6"],\
+          ["swiper", "npm:11.0.5"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["vaul", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:0.8.0"],\
           ["webpack", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:5.89.0"],\
@@ -11384,6 +11386,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["base64-arraybuffer", [\
+      ["npm:1.0.2", {\
+        "packageLocation": "../.yarn/berry/cache/base64-arraybuffer-npm-1.0.2-18f4899892-10c0.zip/node_modules/base64-arraybuffer/",\
+        "packageDependencies": [\
+          ["base64-arraybuffer", "npm:1.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["base64-js", [\
       ["npm:1.5.1", {\
         "packageLocation": "../.yarn/berry/cache/base64-js-npm-1.5.1-b2f7275641-10c0.zip/node_modules/base64-js/",\
@@ -12513,6 +12524,16 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../.yarn/berry/cache/crypto-random-string-npm-2.0.0-8ab47992ef-10c0.zip/node_modules/crypto-random-string/",\
         "packageDependencies": [\
           ["crypto-random-string", "npm:2.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["css-line-break", [\
+      ["npm:2.1.0", {\
+        "packageLocation": "../.yarn/berry/cache/css-line-break-npm-2.1.0-a1fd810d69-10c0.zip/node_modules/css-line-break/",\
+        "packageDependencies": [\
+          ["css-line-break", "npm:2.1.0"],\
+          ["utrie", "npm:1.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15391,6 +15412,17 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/webpack",\
           "webpack"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["html2canvas", [\
+      ["npm:1.4.1", {\
+        "packageLocation": "../.yarn/berry/cache/html2canvas-npm-1.4.1-fa13983145-10c0.zip/node_modules/html2canvas/",\
+        "packageDependencies": [\
+          ["html2canvas", "npm:1.4.1"],\
+          ["css-line-break", "npm:2.1.0"],\
+          ["text-segmentation", "npm:1.0.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -21010,6 +21042,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["swiper", [\
+      ["npm:11.0.5", {\
+        "packageLocation": "../.yarn/berry/cache/swiper-npm-11.0.5-152220df64-10c0.zip/node_modules/swiper/",\
+        "packageDependencies": [\
+          ["swiper", "npm:11.0.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["synchronous-promise", [\
       ["npm:2.0.17", {\
         "packageLocation": "../.yarn/berry/cache/synchronous-promise-npm-2.0.17-949e3e408d-10c0.zip/node_modules/synchronous-promise/",\
@@ -21234,6 +21275,16 @@ const RAW_RUNTIME_STATE =
           ["@istanbuljs/schema", "npm:0.1.3"],\
           ["glob", "npm:7.2.3"],\
           ["minimatch", "npm:3.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["text-segmentation", [\
+      ["npm:1.0.3", {\
+        "packageLocation": "../.yarn/berry/cache/text-segmentation-npm-1.0.3-634201c349-10c0.zip/node_modules/text-segmentation/",\
+        "packageDependencies": [\
+          ["text-segmentation", "npm:1.0.3"],\
+          ["utrie", "npm:1.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -22050,6 +22101,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["utrie", [\
+      ["npm:1.0.2", {\
+        "packageLocation": "../.yarn/berry/cache/utrie-npm-1.0.2-909cbd985c-10c0.zip/node_modules/utrie/",\
+        "packageDependencies": [\
+          ["utrie", "npm:1.0.2"],\
+          ["base64-arraybuffer", "npm:1.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["uuid", [\
       ["npm:9.0.1", {\
         "packageLocation": "../.yarn/berry/cache/uuid-npm-9.0.1-39a8442bc6-10c0.zip/node_modules/uuid/",\
@@ -22596,6 +22657,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-prettier", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:5.0.1"],\
           ["eslint-plugin-storybook", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:0.6.15"],\
           ["framer-motion", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:10.16.16"],\
+          ["html2canvas", "npm:1.4.1"],\
           ["husky", "npm:8.0.3"],\
           ["lint-staged", "npm:15.2.0"],\
           ["next", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:14.0.4"],\
@@ -22611,6 +22673,7 @@ const RAW_RUNTIME_STATE =
           ["scratchable", "npm:0.0.4"],\
           ["slick-carousel", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:1.8.1"],\
           ["storybook", "npm:7.6.6"],\
+          ["swiper", "npm:11.0.5"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["vaul", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:0.8.0"],\
           ["webpack", "virtual:4350742db835f62eacc9216ed319d4e27833f7c96f59935507ea19d8041c9a3cb6d68347584ef7652cd752037cf53736b45dc1ee9107f454117e8aef24dcf9b4#npm:5.89.0"],\

@@ -14751,6 +14751,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"swiper@npm:^11.0.5":
+  version: 11.0.5
+  resolution: "swiper@npm:11.0.5"
+  checksum: 443d147cdca55708dcf0fd174edfd68f6b55166578a9aedc7c636687c071f520e0bb626dd4ea9fb83feb21d61e4e6e4beda8d1f4b7e664077ebda9e22398d815
+  languageName: node
+  linkType: hard
+
 "synchronous-promise@npm:^2.0.15":
   version: 2.0.17
   resolution: "synchronous-promise@npm:2.0.17"
@@ -16019,6 +16026,7 @@ __metadata:
     scratchable: "npm:^0.0.4"
     slick-carousel: "npm:^1.8.1"
     storybook: "npm:^7.6.6"
+    swiper: "npm:^11.0.5"
     typescript: "npm:^5"
     vaul: "npm:^0.8.0"
     webpack: "npm:^5.89.0"
