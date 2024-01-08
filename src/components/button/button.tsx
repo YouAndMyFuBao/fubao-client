@@ -1,7 +1,7 @@
 import * as Style from './button.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variants: 'one-button-enable-none';
+  variants: 'primary' | 'secondary' | 'tertiary' | 'quanternary';
   disabled?: boolean;
   onClick?: () => void;
 }
