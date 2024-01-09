@@ -1,13 +1,27 @@
 import { postPost } from '@/apis/postPost';
+import Button from '@/components/button';
 import Header from '@/components/header/header';
 import LetterCard from '@/components/letter-card/letter-card';
 import { useLetterContext } from '@/hooks/useLetterContext';
 import { useMutation } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
+import * as Style from './index.css';
+import { useEffect, useState } from 'react';
 
 export default function CreateLetter() {
   const router = useRouter();
   const { letterImage, letterText } = useLetterContext();
+  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (letterImage && letterText) {
+      setIsButtonDisabled(false);
+      console.log('isButtonDiabled', isButtonDisabled);
+    } else {
+      setIsButtonDisabled(true);
+      console.log('isButtonDiabled', isButtonDisabled);
+    }
+  }, [letterImage, letterText]);
 
   const mutation = useMutation({
     mutationKey: ['postPost'],
@@ -38,12 +52,35 @@ export default function CreateLetter() {
       console.error('letterImage is required');
     }
   };
+
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper" css={Style.createLetterStyles.wrapper}>
         <Header leftBackPage>푸바오에게 편지쓰기</Header>
-        <LetterCard variant="textCount" />
-        <button onClick={handleCreateLetter}>제출하기</button>
+        <div css={Style.createLetterStyles.postWrapper}>
+          <LetterCard variant="textCount" />
+        </div>
+        <div css={Style.createLetterStyles.buttonWrapper}>
+          {isButtonDisabled ? (
+            <Button
+              variants="quanternary"
+              onClick={handleCreateLetter}
+              css={Style.createLetterStyles.submitButton}
+              disabled={isButtonDisabled}
+            >
+              제출하기
+            </Button>
+          ) : (
+            <Button
+              variants="primary"
+              onClick={handleCreateLetter}
+              css={Style.createLetterStyles.submitButton}
+              disabled={isButtonDisabled}
+            >
+              제출하기
+            </Button>
+          )}
+        </div>
       </div>
     </>
   );

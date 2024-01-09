@@ -1,11 +1,14 @@
 import { css } from '@emotion/react';
 
 export const createLetterStyles = {
+  wrapper: css({
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+  }),
   postWrapper: css({
-    boxShadow: '0 0 0 5px red inset',
-    position: 'relative',
-    width: '300px',
-    margin: '0 auto',
+    padding: '30px',
+    flexGrow: '1',
   }),
 
   image: {
@@ -49,7 +52,11 @@ export const createLetterStyles = {
     }),
   },
 
+  buttonWrapper: css({
+    margin: '18px',
+  }),
+
   submitButton: css({
-    fontSize: '20px',
+    display: 'flex',
   }),
 };
