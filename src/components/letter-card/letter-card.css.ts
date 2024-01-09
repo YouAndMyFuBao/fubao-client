@@ -25,6 +25,7 @@ export const imageUploaded = {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
+    aspectRatio: 'auto',
   }),
   deleteImageIcon: css({
     position: 'absolute',

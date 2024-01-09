@@ -84,9 +84,7 @@ export default function LetterCard(props: LetterCardProps) {
       // console.log('imageInCard', imageInCard);
       return (
         <div css={Style.imageUploaded.wrapper}>
-          <div css={Style.imageUploaded.image}>
-            <img src={imageInCard} alt="postImageSelected" />
-          </div>
+          <img src={imageInCard} alt="postImageSelected" css={Style.imageUploaded.image} />
           <button type="button" onClick={handleDeleteButtonClick}>
             <IconDelete css={Style.imageUploaded.deleteImageIcon} />
           </button>
