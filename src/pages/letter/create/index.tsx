@@ -16,10 +16,8 @@ export default function CreateLetter() {
   useEffect(() => {
     if (letterImage && letterText) {
       setIsButtonDisabled(false);
-      console.log('isButtonDiabled', isButtonDisabled);
     } else {
       setIsButtonDisabled(true);
-      console.log('isButtonDiabled', isButtonDisabled);
     }
   }, [letterImage, letterText]);
 

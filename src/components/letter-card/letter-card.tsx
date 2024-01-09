@@ -17,6 +17,7 @@ interface DateCardProps {
   apiImage: string;
   apiText: string;
   apiDate: string;
+  style?: React.CSSProperties;
 }
 
 type LetterCardProps = TextCountCardProps | DateCardProps;
@@ -96,7 +97,12 @@ export default function LetterCard(props: LetterCardProps) {
   return (
     <>
       {props.variant === 'textCount' && (
-        <div css={Style.letterWrapper} className={letterFont.className} {...props}>
+        <div
+          css={Style.letterWrapper}
+          className={letterFont.className}
+          style={props.style}
+          {...props}
+        >
           {ConditionalRenderImage()}
           <div css={Style.mainText.wrapper}>
             <textarea
@@ -115,7 +121,12 @@ export default function LetterCard(props: LetterCardProps) {
         </div>
       )}
       {props.variant === 'date' && (
-        <div css={Style.letterWrapper} className={letterFont.className} {...props}>
+        <div
+          css={Style.letterWrapper}
+          className={letterFont.className}
+          style={props.style}
+          {...props}
+        >
           <div css={Style.imageUploaded}>
             <div css={Style.imageUploaded.wrapper}>
               <img src={props.apiImage} css={Style.imageUploaded.image} alt="postImageSelected" />

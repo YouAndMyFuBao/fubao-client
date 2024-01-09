@@ -14,6 +14,7 @@ import DateTimeFormat from '@/utils/dateTimeFormat';
 import { useRouter } from 'next/router';
 import { useQuery } from '@tanstack/react-query';
 import html2canvas from 'html2canvas';
+import Button from '@/components/button';
 
 export default function PreviewLetter() {
   const router = useRouter();
@@ -140,9 +141,12 @@ export default function PreviewLetter() {
         {data && <div>{LetterCardWithCss({ data })}</div>}
         <div css={Style.footer.btnGroup} ref={element2Ref}>
           <CopyLink />
-          <div>
-            <button onClick={handleDownload}>이미지 저장</button>
-            <button
+          <div css={Style.footer.bottombtn}>
+            <Button variants="secondary" onClick={handleDownload}>
+              이미지 저장
+            </Button>
+            <Button
+              variants="primary"
               onClick={() =>
                 router.push(
                   {
@@ -156,7 +160,7 @@ export default function PreviewLetter() {
               }
             >
               수정하기
-            </button>
+            </Button>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import { useLetterContext } from '@/hooks/useLetterContext';
 import { patchPost } from '@/apis/patchPost';
 import { useRouter } from 'next/router';
 import { useMutation } from '@tanstack/react-query';
+import Button from '@/components/button';
 
 export default function Edit() {
   const router = useRouter();
@@ -39,7 +40,7 @@ export default function Edit() {
   };
 
   return (
-    <div>
+    <div css={Style.wrapper}>
       <Header leftBackPage>푸바오에게 편지쓰기</Header>
       <div css={Style.main.card}>
         {data && (
@@ -51,7 +52,11 @@ export default function Edit() {
           />
         )}
       </div>
-      <button onClick={handleSubmitClick}>편지 완성하기</button>
+      <div css={Style.main.button}>
+        <Button variants="primary" onClick={handleSubmitClick}>
+          편지 완성하기
+        </Button>
+      </div>
     </div>
   );
 }
