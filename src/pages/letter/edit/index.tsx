@@ -41,7 +41,9 @@ export default function Edit() {
 
   return (
     <div css={Style.wrapper}>
-      <Header leftBackPage>푸바오에게 편지쓰기</Header>
+      <Header leftBackPage hasModal={false}>
+        푸바오에게 편지쓰기
+      </Header>
       <div css={Style.main.card}>
         {data && (
           <LetterCard

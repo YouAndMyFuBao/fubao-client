@@ -70,7 +70,9 @@ export default function CreateLetter() {
   return (
     <>
       <div className="wrapper" css={Style.createLetterStyles.wrapper}>
-        <Header leftBackPage>푸바오에게 편지쓰기</Header>
+        <Header leftBackPage hasModal={true}>
+          푸바오에게 편지쓰기
+        </Header>
         <div css={Style.createLetterStyles.postWrapper}>
           <LetterCard variant="textCount" />
         </div>
