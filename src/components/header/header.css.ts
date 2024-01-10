@@ -20,3 +20,7 @@ export const rightButton = css({
   fontSize: 16,
   lineHeight: '1.3',
 });
+
+export const bottomSheetContent = css({
+  lineHeight: '1.2',
+});
