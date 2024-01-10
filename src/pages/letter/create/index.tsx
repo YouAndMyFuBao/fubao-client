@@ -7,11 +7,15 @@ import { useMutation } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import * as Style from './index.css';
 import { useEffect, useState } from 'react';
+import { getCookie } from 'cookies-next';
+import { BottomSheet } from '@/components/bottom-sheet/bottom-sheet';
 
 export default function CreateLetter() {
   const router = useRouter();
   const { letterImage, letterText } = useLetterContext();
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
+  const [isBottomSheetKakaoOpen, setIsBottomSheetKakaoOpen] = useState<boolean>(false);
+  const accessToken = getCookie('accessToken');
 
   useEffect(() => {
     if (letterImage && letterText) {
@@ -44,11 +48,23 @@ export default function CreateLetter() {
   });
 
   const handleCreateLetter = () => {
+    if (!accessToken) {
+      setIsBottomSheetKakaoOpen(true);
+    }
     if (letterImage !== undefined) {
       mutation.mutate();
     } else {
       console.error('letterImage is required');
     }
+  };
+
+  const handleKakaoLoginClick = () => {
+    router.push(
+      `https://kauth.kakao.com/oauth/authorize?client_id=${process.env
+        .NEXT_PUBLIC_KAKAO_REST_API_KEY!}&redirect_uri=${
+        process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI
+      }&response_type=code`,
+    );
   };
 
   return (
@@ -80,6 +96,19 @@ export default function CreateLetter() {
           )}
         </div>
       </div>
+      {isBottomSheetKakaoOpen && (
+        <BottomSheet.Root open={isBottomSheetKakaoOpen} onOpenChange={setIsBottomSheetKakaoOpen}>
+          <BottomSheet.Trigger></BottomSheet.Trigger>
+          <BottomSheet.Portal>
+            <BottomSheet.Content>
+              로그인이 필요한 서비스입니다!
+              <BottomSheet.BottomCTA>
+                <Button variants="kakao" onClick={handleKakaoLoginClick}></Button>
+              </BottomSheet.BottomCTA>
+            </BottomSheet.Content>
+          </BottomSheet.Portal>
+        </BottomSheet.Root>
+      )}
     </>
   );
 }
