@@ -39,9 +39,4 @@ export const variantsCss: Record<ButtonProps['variants'], SerializedStyles> = {
     backgroundColor: '#A7C2B1',
     color: '#1E212B',
   }),
-  kakao: css({
-    backgroundColor: '#FEE500',
-    display: 'flex',
-    gap: '28px',
-  }),
 };

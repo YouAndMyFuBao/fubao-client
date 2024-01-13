@@ -56,6 +56,19 @@ export const createLetterStyles = {
     margin: '18px',
   }),
 
+  kakaoButton: css({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '28px',
+    width: '100%',
+    height: '56px',
+    fontSize: '17px',
+    fontWeight: '600',
+    borderRadius: '16px',
+    backgroundColor: '#FEE500',
+  }),
+
   submitButton: css({
     display: 'flex',
   }),

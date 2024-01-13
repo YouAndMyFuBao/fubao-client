@@ -9,6 +9,7 @@ import * as Style from './index.css';
 import { useEffect, useState } from 'react';
 import { getCookie } from 'cookies-next';
 import { BottomSheet } from '@/components/bottom-sheet/bottom-sheet';
+import { IconKaKao } from '../../../../public/assets/svgs';
 
 export default function CreateLetter() {
   const router = useRouter();
@@ -105,7 +106,10 @@ export default function CreateLetter() {
             <BottomSheet.Content>
               로그인이 필요한 서비스입니다!
               <BottomSheet.BottomCTA>
-                <Button variants="kakao" onClick={handleKakaoLoginClick}></Button>
+                <button onClick={handleKakaoLoginClick} css={Style.createLetterStyles.kakaoButton}>
+                  <IconKaKao />
+                  <p>카카오 로그인</p>
+                </button>
               </BottomSheet.BottomCTA>
             </BottomSheet.Content>
           </BottomSheet.Portal>
