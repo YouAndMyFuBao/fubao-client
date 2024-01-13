@@ -71,7 +71,7 @@ export default function CreateLetter() {
   return (
     <>
       <div className="wrapper" css={Style.createLetterStyles.wrapper}>
-        <Header leftBackPage hasModal={true}>
+        <Header leftBackPage hasLeftBackModal={true}>
           푸바오에게 편지쓰기
         </Header>
         <div css={Style.createLetterStyles.postWrapper}>

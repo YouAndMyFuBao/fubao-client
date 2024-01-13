@@ -34,13 +34,8 @@ export default function PreviewLetter() {
     const element1 = element1Ref.current;
     const element2 = element2Ref.current;
 
-    console.log('element1', element1Ref.current);
-    console.log('element2', element2Ref.current);
-
     if (element1 && element2) {
       hideElements(element1, element2);
-      console.log('element1AfterHide', element1Ref.current);
-      console.log('element2AfterHide', element2Ref.current);
     }
 
     const page = document.querySelector('#letter');
