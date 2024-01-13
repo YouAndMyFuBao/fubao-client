@@ -12,7 +12,7 @@ interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   rightCloseButton?: boolean;
 }
 
-function HeaderWithModal({
+function HeaderWithBottomSheet({
   children,
   onClick,
   leftBackPage,
@@ -66,7 +66,7 @@ function HeaderWithModal({
   );
 }
 
-function HeaderWithoutModal({
+function HeaderWithoutBottomSheet({
   children,
   onClick,
   leftBackPage,
@@ -107,5 +107,5 @@ function HeaderWithoutModal({
 }
 
 export default function Header({ hasModal, ...rest }: { hasModal: boolean } & HeaderProps) {
-  return hasModal ? <HeaderWithModal {...rest} /> : <HeaderWithoutModal {...rest} />;
+  return hasModal ? <HeaderWithBottomSheet {...rest} /> : <HeaderWithoutBottomSheet {...rest} />;
 }
