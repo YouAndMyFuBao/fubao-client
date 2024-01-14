@@ -12,7 +12,7 @@ const Redirect = () => {
     const refreshToken = data.refreshToken;
     if ({ data }) {
       setCookie('accessToken', accessToken, {
-        maxAge: 60 * 30,
+        maxAge: 60 * 3000,
       });
       setCookie('refreshToken', refreshToken, {
         maxAge: 60 * 60 * 24 * 30,
