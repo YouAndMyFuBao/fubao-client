@@ -14,7 +14,7 @@ export const base = css({
   boxShadow: '0px 0px 16px 2px rgba(0, 0, 0, 0.12)',
   backgroundColor: 'white',
   position: 'fixed',
-  zIndex: 100,
+  zIndex: 10000,
   bottom: '30px',
   left: '0px',
   right: '0px',
