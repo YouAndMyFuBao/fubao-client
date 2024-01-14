@@ -1,20 +1,23 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import HomeHeader from '../home/_components/home-header';
+import Button from '@/components/button';
+import MyLetterHeader from './_components/my-letter-header';
 import { useQuery } from '@tanstack/react-query';
 import { getMyLetter } from '@/apis/getMyLetter';
 import LetterCard from '@/components/letter-card/letter-card';
 import * as Style from './my-letter.css';
+import { BottomSheet } from '@/components/bottom-sheet/bottom-sheet';
 
 export default () => {
   const { data: letterData } = useQuery({
     queryKey: ['letterData'],
     queryFn: getMyLetter,
   });
+
   const myLetterMessage = `카드를 누르면\n편지 읽는 푸바오를 만날 수 있어요!`;
   return (
-    <>
-      <HomeHeader />
+    <div style={{ backgroundColor: '#000000' }}>
+      <MyLetterHeader />
       <div css={Style.base}>
         <Swiper
           spaceBetween={50}
@@ -37,7 +40,6 @@ export default () => {
                 justifyContent: 'center',
               }}
             >
-              <div>{letter.postId}</div>
               <LetterCard
                 variant="date"
                 apiDate={letter.date}
@@ -51,9 +53,43 @@ export default () => {
       </div>
       <p css={Style.message}>{myLetterMessage}</p>
       <div css={Style.buttonContainer}>
-        <button>삭제하기</button>
-        <button>수정하기</button>
+        {/* 삭제하기 */}
+        <BottomSheet.Root>
+          <BottomSheet.Trigger style={{ width: '100%' }}>
+            <Button variants="secondary">삭제하기</Button>
+          </BottomSheet.Trigger>
+          <BottomSheet.Portal>
+            <BottomSheet.Content>
+              편지를 삭제하시겠어요?
+              <BottomSheet.BottomCTA>
+                <BottomSheet.Close asChild>
+                  <Button variants="quanternary">닫기</Button>
+                </BottomSheet.Close>
+                <Button variants="tertiary">삭제하기</Button>
+              </BottomSheet.BottomCTA>
+            </BottomSheet.Content>
+          </BottomSheet.Portal>
+          <BottomSheet.Overlay />
+        </BottomSheet.Root>
+        {/* 수정하기 */}
+        <BottomSheet.Root>
+          <BottomSheet.Trigger style={{ width: '100%' }}>
+            <Button variants="tertiary">수정하기</Button>
+          </BottomSheet.Trigger>
+          <BottomSheet.Portal>
+            <BottomSheet.Content>
+              편지를 수정하시겠어요?
+              <BottomSheet.BottomCTA>
+                <BottomSheet.Close asChild>
+                  <Button variants="quanternary">닫기</Button>
+                </BottomSheet.Close>
+                <Button variants="tertiary">수정하기</Button>
+              </BottomSheet.BottomCTA>
+            </BottomSheet.Content>
+          </BottomSheet.Portal>
+          <BottomSheet.Overlay />
+        </BottomSheet.Root>
       </div>
-    </>
+    </div>
   );
 };

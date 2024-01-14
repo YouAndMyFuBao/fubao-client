@@ -1,8 +1,9 @@
 import { css } from '@emotion/react';
 
 export const base = css({
-  backgroundColor: 'rgba(0, 0, 0, 0.90)',
-  marginTop: '39px',
+  backgroundColor: '#000000',
+  marginTop: '76px',
+  paddingTop: '30px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -16,12 +17,11 @@ export const message = css({
   whiteSpace: 'pre-wrap',
   textAlign: 'center',
   lineHeight: '1.5',
-  marginTop: '60px',
+  margin: '40px 0',
 });
 
 export const buttonContainer = css({
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  marginTop: '60px',
+  margin: '30px 18px 35px 18px',
+  gap: '10px',
 });
