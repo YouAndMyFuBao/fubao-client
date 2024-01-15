@@ -85,9 +85,7 @@ export default function LetterCard(props: LetterCardProps) {
       // console.log('imageInCard', imageInCard);
       return (
         <div css={Style.imageUploaded.wrapper}>
-          <div css={Style.imageUploaded.image}>
-            <img src={imageInCard} alt="postImageSelected" />
-          </div>
+          <img src={imageInCard} alt="postImageSelected" css={Style.imageUploaded.image} />
           <button type="button" onClick={handleDeleteButtonClick}>
             <IconDelete css={Style.imageUploaded.deleteImageIcon} />
           </button>
@@ -99,7 +97,12 @@ export default function LetterCard(props: LetterCardProps) {
   return (
     <>
       {props.variant === 'textCount' && (
-        <div css={Style.letterWrapper} className={letterFont.className}>
+        <div
+          css={Style.letterWrapper}
+          className={letterFont.className}
+          style={props.style}
+          {...props}
+        >
           {ConditionalRenderImage()}
           <div css={Style.mainText.wrapper}>
             <textarea
@@ -118,7 +121,12 @@ export default function LetterCard(props: LetterCardProps) {
         </div>
       )}
       {props.variant === 'date' && (
-        <div css={Style.letterWrapper} className={letterFont.className} style={props.style}>
+        <div
+          css={Style.letterWrapper}
+          className={letterFont.className}
+          style={props.style}
+          {...props}
+        >
           <div css={Style.imageUploaded}>
             <div css={Style.imageUploaded.wrapper}>
               <img src={props.apiImage} css={Style.imageUploaded.image} alt="postImageSelected" />

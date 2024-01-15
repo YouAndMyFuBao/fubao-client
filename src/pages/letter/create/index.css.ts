@@ -1,11 +1,14 @@
 import { css } from '@emotion/react';
 
 export const createLetterStyles = {
+  wrapper: css({
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+  }),
   postWrapper: css({
-    boxShadow: '0 0 0 5px red inset',
-    position: 'relative',
-    width: '300px',
-    margin: '0 auto',
+    padding: '30px',
+    flexGrow: '1',
   }),
 
   image: {
@@ -49,7 +52,24 @@ export const createLetterStyles = {
     }),
   },
 
+  buttonWrapper: css({
+    margin: '18px',
+  }),
+
+  kakaoButton: css({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '28px',
+    width: '100%',
+    height: '56px',
+    fontSize: '17px',
+    fontWeight: '600',
+    borderRadius: '16px',
+    backgroundColor: '#FEE500',
+  }),
+
   submitButton: css({
-    fontSize: '20px',
+    display: 'flex',
   }),
 };

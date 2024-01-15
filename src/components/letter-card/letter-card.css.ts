@@ -1,8 +1,9 @@
 import { css } from '@emotion/react';
 
 export const letterWrapper = css({
+  width: '100%',
+  height: '497px',
   border: '3px solid #1E212B',
-  // margin: '28px 30px',
   padding: '16px',
   display: 'flex',
   flexDirection: 'column',
@@ -24,6 +25,7 @@ export const imageUploaded = {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
+    aspectRatio: 'auto',
   }),
   deleteImageIcon: css({
     position: 'absolute',
@@ -58,14 +60,17 @@ export const mainText = {
   wrapper: css({
     position: 'relative',
     height: '100px',
+    flexGrow: '1',
   }),
   textarea: css({
     border: 'none',
     width: '100%',
-    height: '100px',
+    height: '100%',
     resize: 'none',
     backgroundColor: 'transparent',
-
+    ':focus': {
+      outline: 'none',
+    },
     '&::placeholder': {
       lineHeight: '1.7',
     },

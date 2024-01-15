@@ -4,10 +4,6 @@ export const headerWrapper = css({
   padding: '7.5px 18px',
   display: 'flex',
   justifyContent: 'space-between',
-  position: 'fixed',
-  top: '0',
-  // display: fixed하면 width: '100%' 적용이 안됨
-  width: '450px',
 });
 
 export const title = css({
@@ -23,4 +19,8 @@ export const rightButton = css({
   color: '#fff',
   fontSize: 16,
   lineHeight: '1.3',
+});
+
+export const bottomSheetContent = css({
+  lineHeight: '1.2',
 });

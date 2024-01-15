@@ -62,10 +62,16 @@ export const mainLetterCard = {
 
 export const footer = {
   btnGroup: css({
+    width: '350px',
     position: 'fixed',
     bottom: '10px',
     left: '50%',
     transform: 'translateX(-50%)',
     zIndex: '10',
+  }),
+  bottombtn: css({
+    display: 'flex',
+    flexDirection: 'row',
+    gap: '10px',
   }),
 };
