@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 export const motion = css({
   position: 'fixed',
   top: 0,
-  zIndex: 100,
+  zIndex: 50,
   width: '100%',
   minWidth: '390px',
   maxWidth: '450px',
@@ -14,6 +14,10 @@ export const base = css({
   background: '#1E212B',
   padding: '22px',
   color: 'white',
+  position: 'fixed',
+  width: '100%',
+  minWidth: '390px',
+  maxWidth: '450px',
 });
 
 export const modalHeader = css({
@@ -48,7 +52,7 @@ export const memberManagementButton = css({
 
 export const example = css({
   position: 'relative',
-  zIndex: 100,
+  zIndex: 1000,
   borderRadius: '20px',
   backgroundColor: 'red',
   width: '300px',
@@ -57,9 +61,24 @@ export const example = css({
 
 export const exampleSecond = css({
   position: 'relative',
-  zIndex: 100,
+  zIndex: 1000,
   borderRadius: '20px',
   backgroundColor: 'blue',
   width: '300px',
   height: '50px',
+});
+
+export const kakaoButton = css({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  height: '56px',
+  borderRadius: '16px',
+  backgroundColor: '#FEE500',
+  color: '#000000',
+  fontSize: '15px',
+  fontWeight: '600',
+  cursor: 'pointer',
+  gap: '28px',
 });

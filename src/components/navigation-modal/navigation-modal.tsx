@@ -3,10 +3,11 @@ import * as Style from './navigation-modal.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getCookie } from 'cookies-next';
-import { useState } from 'react';
 import { postLogout } from '@/apis/postLogout';
 import { deleteDeactivation } from '@/apis/deleteDeactivation';
 import { useRouter } from 'next/router';
+import { BottomSheet } from '../bottom-sheet/bottom-sheet';
+import Button from '../button';
 
 interface NavigationModalProps {
   isOpen: boolean;
@@ -46,91 +47,12 @@ export default function NavigationModal({ isOpen, onClose }: NavigationModalProp
   const router = useRouter();
   const accessToken = getCookie('accessToken');
 
-  const [modal, setModal] = useState<{ isOpen: boolean; type: 'login' | 'logout' | 'delete' }>({
-    isOpen: false,
-    type: 'login',
-  });
-
   const kakaoLogin = () => {
     window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${process.env
       .NEXT_PUBLIC_KAKAO_REST_API_KEY!}&redirect_uri=${
       process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI
     }&response_type=code`;
   };
-
-  function SwitchModal({ type }: { type: 'login' | 'logout' | 'delete' }) {
-    switch (type) {
-      case 'login':
-        return (
-          <>
-            <button css={Style.example} onClick={() => kakaoLogin()}>
-              login
-            </button>
-            <button
-              css={Style.exampleSecond}
-              onClick={() => {
-                setModal({
-                  isOpen: false,
-                  type: 'login',
-                });
-              }}
-            >
-              닫기
-            </button>
-          </>
-        );
-      case 'logout':
-        return (
-          <>
-            <button
-              css={Style.example}
-              onClick={async () => {
-                await postLogout();
-                router.reload();
-              }}
-            >
-              logout
-            </button>
-            <button
-              css={Style.exampleSecond}
-              onClick={() => {
-                setModal({
-                  isOpen: false,
-                  type: 'logout',
-                });
-              }}
-            >
-              닫기
-            </button>
-          </>
-        );
-      case 'delete':
-        return (
-          <>
-            <button
-              css={Style.example}
-              onClick={async () => {
-                await deleteDeactivation();
-                router.reload();
-              }}
-            >
-              delete
-            </button>
-            <button
-              css={Style.exampleSecond}
-              onClick={() => {
-                setModal({
-                  isOpen: false,
-                  type: 'delete',
-                });
-              }}
-            >
-              닫기
-            </button>
-          </>
-        );
-    }
-  }
 
   return (
     <AnimatePresence>
@@ -179,28 +101,61 @@ export default function NavigationModal({ isOpen, onClose }: NavigationModalProp
                   transition={{ duration: 1.3, ease: 'easeInOut' }}
                   css={Style.memberManagement}
                 >
-                  <button
-                    css={Style.memberManagementButton}
-                    onClick={() => {
-                      setModal({
-                        isOpen: true,
-                        type: 'logout',
-                      });
-                    }}
-                  >
-                    로그아웃
-                  </button>
-                  <button
-                    css={Style.memberManagementButton}
-                    onClick={() => {
-                      setModal({
-                        isOpen: true,
-                        type: 'delete',
-                      });
-                    }}
-                  >
-                    회원탈퇴
-                  </button>
+                  {/* 로그아웃 */}
+                  <BottomSheet.Root>
+                    <BottomSheet.Trigger>
+                      <button css={Style.memberManagementButton}>로그아웃</button>
+                    </BottomSheet.Trigger>
+                    <BottomSheet.Portal>
+                      <BottomSheet.Content>
+                        로그아웃 하시겠어요?
+                        <br />
+                        다음에 다시 만나요
+                        <BottomSheet.BottomCTA>
+                          <BottomSheet.Close asChild>
+                            <Button variants="quanternary">닫기</Button>
+                          </BottomSheet.Close>
+                          <Button
+                            variants="tertiary"
+                            onClick={async () => {
+                              await postLogout();
+                              router.reload();
+                            }}
+                          >
+                            로그아웃
+                          </Button>
+                        </BottomSheet.BottomCTA>
+                      </BottomSheet.Content>
+                      <BottomSheet.Overlay />
+                    </BottomSheet.Portal>
+                  </BottomSheet.Root>
+                  <BottomSheet.Root>
+                    <BottomSheet.Trigger>
+                      <button css={Style.memberManagementButton}>회원탈퇴</button>
+                    </BottomSheet.Trigger>
+                    <BottomSheet.Portal>
+                      <BottomSheet.Content>
+                        디어바오와 작별합니다.
+                        <br />
+                        다음에 다시 만나요.
+                        <BottomSheet.BottomCTA>
+                          <BottomSheet.Close asChild>
+                            <Button variants="quanternary">닫기</Button>
+                          </BottomSheet.Close>
+                          <Button
+                            variants="tertiary"
+                            onClick={async () => {
+                              await deleteDeactivation();
+                              router.reload();
+                            }}
+                          >
+                            회원탈퇴
+                          </Button>
+                        </BottomSheet.BottomCTA>
+                      </BottomSheet.Content>
+                      <BottomSheet.Overlay />
+                    </BottomSheet.Portal>
+                  </BottomSheet.Root>
                 </motion.div>
               ) : (
                 <motion.div
@@ -209,22 +164,32 @@ export default function NavigationModal({ isOpen, onClose }: NavigationModalProp
                   transition={{ duration: 1.3, ease: 'easeInOut' }}
                   css={Style.memberManagement}
                 >
-                  <button
-                    css={Style.memberManagementButton}
-                    onClick={() => {
-                      setModal({
-                        isOpen: true,
-                        type: 'login',
-                      });
-                    }}
-                  >
-                    로그인
-                  </button>
+                  <BottomSheet.Root>
+                    <BottomSheet.Trigger>
+                      <button css={Style.memberManagementButton}>로그인</button>
+                    </BottomSheet.Trigger>
+                    <BottomSheet.Portal>
+                      <BottomSheet.Content>
+                        로그인이 필요한 서비스입니다.
+                        <BottomSheet.BottomCTA>
+                          <button css={Style.kakaoButton} onClick={() => kakaoLogin()}>
+                            <Image
+                              alt="kakao"
+                              src="/assets/svgs/IconKaKao.svg"
+                              width={18}
+                              height={18}
+                            />
+                            카카오 로그인
+                          </button>
+                        </BottomSheet.BottomCTA>
+                      </BottomSheet.Content>
+                      <BottomSheet.Overlay />
+                    </BottomSheet.Portal>
+                  </BottomSheet.Root>
                 </motion.div>
               )}
             </div>
           </div>
-          {modal.isOpen && <SwitchModal type={modal.type} />}
         </motion.div>
       )}
     </AnimatePresence>
