@@ -14,7 +14,6 @@ export default function Edit() {
   const letterId = Number(router.query.postId);
   const { letterImage, letterText } = useLetterContext();
 
-  // const letterId = 81;
   const { data } = useGetPost({ postId: letterId });
 
   const { mutate, data: patchData } = useMutation({
@@ -24,12 +23,12 @@ export default function Edit() {
       console.log('patchSuccess', data);
       router.push(
         {
-          pathname: `/letter/preview`,
+          pathname: `/letter/preview?postId=${data.data.data.postId}`,
           query: {
             postId: data.data.data.postId,
           },
         },
-        '/letter/preveiw',
+        `/letter/preview/${data.data.data.postId}`,
       );
     },
   });
@@ -41,7 +40,7 @@ export default function Edit() {
 
   return (
     <div css={Style.wrapper}>
-      <Header leftBackPage hasModal={false}>
+      <Header leftBackPage hasLeftBackModal={false}>
         푸바오에게 편지쓰기
       </Header>
       <div css={Style.main.card}>
