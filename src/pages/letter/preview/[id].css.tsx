@@ -33,29 +33,20 @@ export const background = {
 };
 
 export const pageWrapper = css({
-  overflow: 'hidden',
-  // boxShadow: '0 0 0 3px red',
-  height: '100%',
   width: '100%',
 });
 
 export const mainLetterCard = {
   hand: css({
-    width: '38%',
-    height: '61%',
     position: 'absolute',
-    top: '20vh',
-    right: '32%',
-    // boxShadow: '0 0 0 10px purple',
+    top: '100px',
+    right: '90px',
     transform: 'rotate(-15deg)',
   }),
   head: css({
-    width: '38%',
-    height: '61%',
-    // boxShadow: '0 0 0 10px red',
     position: 'absolute',
-    top: '13vh',
-    left: '35%',
+    top: '75px',
+    left: '80px',
     transform: 'rotate(6.66deg)',
   }),
 };
