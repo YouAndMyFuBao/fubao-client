@@ -3,7 +3,7 @@ export default function DateTimeFormat(OriginalDateTime: string): string {
 
   const outputDateTime = `${dateTime.getFullYear()}. ${
     dateTime.getMonth() + 1
-  }. ${dateTime.getDay()}`;
+  }. ${dateTime.getDate()}`;
 
   return outputDateTime.toString();
 }

@@ -16,6 +16,7 @@ import { useQuery } from '@tanstack/react-query';
 import html2canvas from 'html2canvas';
 import Button from '@/components/button';
 import { getCookie } from 'cookies-next';
+import { getImage } from '@/apis/getImage';
 
 export default function PreviewLetterWithId() {
   const router = useRouter();
@@ -31,6 +32,12 @@ export default function PreviewLetterWithId() {
   const { data } = useQuery<APIResponse<PostData>>({
     queryKey: ['getPost'],
     queryFn: () => getPost({ postId: letterId }),
+    enabled: !!letterId,
+  });
+
+  const { data: imageUrl } = useQuery({
+    queryKey: ['getImage'],
+    queryFn: () => (letterId ? getImage({ postId: letterId }) : Promise.resolve({})),
     enabled: !!letterId,
   });
 
@@ -113,12 +120,15 @@ export default function PreviewLetterWithId() {
   };
 
   const LetterCardWithCss = ({ data }: { data: APIResponse<PostData> }) => {
+    const base = 'data:image/png;base64,';
+    const imageUrlAsBase64 = base + imageUrl;
+
     if (isBackgroundHandVersion) {
       return (
         <div css={Style.mainLetterCard.hand}>
           <LetterCard
             variant="date"
-            apiImage={data.data.imageUrl}
+            apiImage={imageUrlAsBase64}
             apiText={data?.data.content}
             apiDate={DateTimeFormat(data.data.date)}
           />
@@ -129,7 +139,7 @@ export default function PreviewLetterWithId() {
         <div css={Style.mainLetterCard.head}>
           <LetterCard
             variant="date"
-            apiImage={data.data.imageUrl}
+            apiImage={imageUrlAsBase64}
             apiText={data?.data.content}
             apiDate={DateTimeFormat(data.data.date)}
           />
