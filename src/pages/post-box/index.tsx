@@ -56,7 +56,7 @@ const PostBox = () => {
               maxWidth: '450px',
             }}
           >
-            <Button variants="primary" size="large" onClick={() => router.push('/letter')}>
+            <Button variants="primary" onClick={() => router.push('/letter')}>
               {`편지 쓰러가기`}
             </Button>
           </div>

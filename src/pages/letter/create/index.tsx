@@ -29,7 +29,6 @@ export default function CreateLetter() {
   const mutation = useMutation({
     mutationKey: ['postPost'],
     mutationFn: async () => {
-      // 이미지와 텍스트가 정의되었는지 확인
       if (letterImage && letterText) {
         return postPost({ image: letterImage, text: letterText });
       } else {
@@ -40,10 +39,10 @@ export default function CreateLetter() {
       console.log('Success', data);
       router.push(
         {
-          pathname: '/letter/preview',
+          pathname: `/letter/preview?postId=${data.data.data.postId}`,
           query: { postId: data.data.data.postId },
         },
-        '/letter/preview',
+        `letter/preview/${data.data.data.postId}`,
       );
     },
   });
