@@ -154,7 +154,14 @@ export default function PreviewLetterWithId() {
         {isBackgroundHandVersion ? backgroundHandVersion() : backgroundHeadVersion()}
         <div css={Style.pageWrapper}>
           <div ref={element1Ref}>
-            {isMounted && accessToken ? <Header rightDoneButton /> : <Header rightCloseButton />}
+            {isMounted && accessToken ? (
+              <Header rightDoneButton onClick={() => router.push('/home')} />
+            ) : (
+              <Header
+                rightCloseButton
+                onClick={() => window.open('about:blank', '_self')?.close()}
+              />
+            )}
           </div>
           {data && <div>{LetterCardWithCss({ data })}</div>}
           <div css={Style.footer.btnGroup} ref={element2Ref}>
