@@ -21,7 +21,7 @@ export default function Edit() {
     mutationFn: () => patchPost({ postId: activePostId, image: letterImage, content: letterText }),
     onSuccess: (data) => {
       console.log('patchSuccess', data);
-      router.push(`/my-letter`);
+      router.back();
     },
   });
 
