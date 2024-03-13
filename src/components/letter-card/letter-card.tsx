@@ -18,6 +18,7 @@ interface DateCardProps {
   apiText: string;
   apiDate: string;
   style?: React.CSSProperties;
+  onClick?: () => void;
 }
 
 type LetterCardProps = TextCountCardProps | DateCardProps;

@@ -9,6 +9,7 @@ import { css } from '@emotion/react';
 import { BottomSheet } from '@/components/bottom-sheet/bottom-sheet';
 import { useState, useEffect } from 'react';
 import { deletePost } from '@/apis/deletePost';
+import { useRouter } from 'next/router';
 
 export default () => {
   const { data: letterData } = useQuery({
@@ -16,6 +17,7 @@ export default () => {
     queryFn: getMyLetter,
   });
 
+  const router = useRouter();
   const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -63,7 +65,18 @@ export default () => {
                   apiDate={letter.date}
                   apiImage={letter.imageUrl}
                   apiText={letter.content}
-                  style={{ width: '330px' }}
+                  style={{ width: '330px', cursor: 'pointer' }}
+                  onClick={() =>
+                    router.push(
+                      {
+                        pathname: `/my-letter/preview?postId=${activePostId}`,
+                        query: {
+                          activePostId: activePostId,
+                        },
+                      },
+                      `/my-letter/preview/${activePostId}`,
+                    )
+                  }
                 />
               </SwiperSlide>
             ))}
@@ -108,7 +121,20 @@ export default () => {
                   <BottomSheet.Close asChild>
                     <Button variants="quanternary">닫기</Button>
                   </BottomSheet.Close>
-                  <Button variants="tertiary">수정하기</Button>
+                  <Button
+                    variants="tertiary"
+                    onClick={() =>
+                      router.push(
+                        {
+                          pathname: `/my-letter/edit/${activePostId}`,
+                          query: { activePostId: activePostId },
+                        },
+                        `/my-letter/edit/${activePostId}`,
+                      )
+                    }
+                  >
+                    수정하기
+                  </Button>
                 </BottomSheet.BottomCTA>
               </BottomSheet.Content>
             </BottomSheet.Portal>
