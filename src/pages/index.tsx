@@ -1,7 +1,5 @@
-export default function Home() {
-  return (
-    <>
-      <h1>fubao</h1>
-    </>
-  );
+import Home from './home';
+
+export default function Onboarding() {
+  return <Home />;
 }
