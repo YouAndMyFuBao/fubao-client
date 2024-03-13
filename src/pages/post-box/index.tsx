@@ -1,6 +1,6 @@
 import Button from '@/components/button';
 import HomeHeader from '../home/_components/home-header';
-import * as Style from '../../styles/post-box/post-box.css';
+import { css } from '@emotion/react';
 import { useRouter } from 'next/navigation';
 import Post from './_components/post';
 import { useInfiniteQuery } from '@tanstack/react-query';
@@ -34,10 +34,10 @@ const PostBox = () => {
   return (
     <>
       <HomeHeader />
-      <div css={Style.body}>
+      <div css={body}>
         <div>
-          <main css={Style.base}>
-            <div css={Style.postContainer}>
+          <main css={base}>
+            <div css={postContainer}>
               {postBoxData?.pages.map((page) =>
                 page.content.map((post) => <Post key={post.postId} post={post} />),
               )}
@@ -67,3 +67,41 @@ const PostBox = () => {
 };
 
 export default PostBox;
+
+const body = css({
+  position: 'relative',
+  top: '63px',
+  left: '0',
+  width: '100%',
+});
+
+const base = css({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  minWidth: '390px',
+  maxWidth: '450px',
+  background: `url('/assets/svgs/IconPostBox.svg')`,
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  height: '100vh',
+  position: 'fixed',
+  zIndex: '0',
+});
+
+const postContainer = css({
+  position: 'relative',
+  top: '22px',
+  left: '0',
+  width: '284px',
+  height: '485px',
+  display: 'grid',
+  gridGap: '16px',
+  overflowY: 'scroll',
+  msOverflowStyle: 'none',
+  scrollbarWidth: 'none',
+  WebkitScrollBar: 'none',
+  gridTemplateColumns: 'repeat(2, 1fr)',
+});

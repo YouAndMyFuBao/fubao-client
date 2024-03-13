@@ -5,7 +5,7 @@ import MyLetterHeader from './_components/my-letter-header';
 import { useQuery } from '@tanstack/react-query';
 import { getMyLetter } from '@/apis/getMyLetter';
 import LetterCard from '@/components/letter-card/letter-card';
-import * as Style from '../../styles/my-letter/my-letter.css';
+import { css } from '@emotion/react';
 import { BottomSheet } from '@/components/bottom-sheet/bottom-sheet';
 import { useState, useEffect } from 'react';
 import { deletePost } from '@/apis/deletePost';
@@ -38,7 +38,7 @@ export default () => {
     mounted && (
       <div style={{ backgroundColor: '#000000' }}>
         <MyLetterHeader />
-        <div css={Style.base}>
+        <div css={base}>
           <Swiper
             spaceBetween={50}
             slidesPerView={1}
@@ -69,8 +69,8 @@ export default () => {
             ))}
           </Swiper>
         </div>
-        <p css={Style.message}>{myLetterMessage}</p>
-        <div css={Style.buttonContainer}>
+        <p css={message}>{myLetterMessage}</p>
+        <div css={buttonContainer}>
           {/* 삭제하기 */}
           <BottomSheet.Root>
             <BottomSheet.Trigger style={{ width: '100%' }}>
@@ -119,3 +119,29 @@ export default () => {
     )
   );
 };
+
+const base = css({
+  backgroundColor: '#000000',
+  marginTop: '76px',
+  paddingTop: '30px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+});
+
+const message = css({
+  fontSize: '14px',
+  fontWeight: '500',
+  color: 'white',
+  whiteSpace: 'pre-wrap',
+  textAlign: 'center',
+  lineHeight: '1.5',
+  margin: '40px 0',
+});
+
+const buttonContainer = css({
+  display: 'flex',
+  margin: '30px 18px 35px 18px',
+  gap: '10px',
+});

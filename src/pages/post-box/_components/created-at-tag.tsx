@@ -1,4 +1,4 @@
-import * as Style from '../../../styles/post-box/_components/created-at-tag.css';
+import { css } from '@emotion/react';
 
 interface CreatedAtTagProps {
   time: string;
@@ -7,9 +7,23 @@ interface CreatedAtTagProps {
 
 export default function CreatedAtTag({ time, onClick }: CreatedAtTagProps) {
   return (
-    <div css={Style.base}>
+    <div css={base}>
       {time}
       <img src="/assets/svgs/IconCreatedAt.svg" onClick={onClick} />
     </div>
   );
 }
+
+const base = css({
+  borderRadius: '999px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  background: 'rgba(0, 0, 0, 0.30)',
+  color: 'white',
+  position: 'absolute',
+  zIndex: '100px',
+  padding: '4px',
+  margin: '5px',
+  fontSize: '12px',
+});

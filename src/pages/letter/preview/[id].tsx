@@ -4,7 +4,7 @@ import {
   BackgroundPreviewHand,
   BackgroundPreviewHead,
 } from '../../../../public/assets/svgs';
-import * as Style from '../../../styles/letter/preview/[id].css';
+import { css } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
 import CopyLink from '@/components/copy-link/copy-link';
 import LetterCard from '@/components/letter-card/letter-card';
@@ -101,10 +101,10 @@ export default function PreviewLetterWithId() {
   const backgroundHandVersion = () => {
     return (
       <div className="background">
-        <div css={Style.background.hand}>
+        <div css={background.hand}>
           <BackgroundPreviewHand />
         </div>
-        <div css={Style.background.finger}>
+        <div css={background.finger}>
           <BackgroundPreviewFinger />
         </div>
       </div>
@@ -113,7 +113,7 @@ export default function PreviewLetterWithId() {
 
   const backgroundHeadVersion = () => {
     return (
-      <div className="background" css={Style.background.head}>
+      <div className="background" css={background.head}>
         <BackgroundPreviewHead />
       </div>
     );
@@ -125,7 +125,7 @@ export default function PreviewLetterWithId() {
 
     if (isBackgroundHandVersion) {
       return (
-        <div css={Style.mainLetterCard.hand}>
+        <div css={mainLetterCard.hand}>
           <LetterCard
             variant="date"
             apiImage={imageUrlAsBase64}
@@ -136,7 +136,7 @@ export default function PreviewLetterWithId() {
       );
     } else {
       return (
-        <div css={Style.mainLetterCard.head}>
+        <div css={mainLetterCard.head}>
           <LetterCard
             variant="date"
             apiImage={imageUrlAsBase64}
@@ -150,9 +150,9 @@ export default function PreviewLetterWithId() {
 
   return (
     <div id="letter">
-      <div css={Style.backgroundWrapper}>
+      <div css={backgroundWrapper}>
         {isBackgroundHandVersion ? backgroundHandVersion() : backgroundHeadVersion()}
-        <div css={Style.pageWrapper}>
+        <div css={pageWrapper}>
           <div ref={element1Ref}>
             {isMounted && accessToken ? (
               <Header rightDoneButton onClick={() => router.push('/home')} />
@@ -164,9 +164,9 @@ export default function PreviewLetterWithId() {
             )}
           </div>
           {data && <div>{LetterCardWithCss({ data })}</div>}
-          <div css={Style.footer.btnGroup} ref={element2Ref}>
+          <div css={footer.btnGroup} ref={element2Ref}>
             <CopyLink />
-            <div css={Style.footer.bottombtn}>
+            <div css={footer.bottombtn}>
               <Button variants="secondary" onClick={handleDownload}>
                 이미지 저장
               </Button>
@@ -199,3 +199,64 @@ export default function PreviewLetterWithId() {
     </div>
   );
 }
+
+const backgroundWrapper = css({
+  position: 'relative',
+  height: '100vh',
+});
+
+const background = {
+  hand: css({
+    position: 'absolute',
+    right: '0',
+    top: '47vh',
+  }),
+  finger: css({
+    position: 'absolute',
+    right: '0',
+    top: '57vh',
+    zIndex: '1',
+  }),
+  head: css({
+    position: 'absolute',
+    top: '65vh',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    zIndex: '1',
+  }),
+};
+
+const pageWrapper = css({
+  width: '100%',
+});
+
+const mainLetterCard = {
+  hand: css({
+    position: 'absolute',
+    top: '100px',
+    right: '90px',
+    transform: 'rotate(-15deg)',
+  }),
+  head: css({
+    position: 'absolute',
+    top: '75px',
+    left: '80px',
+    transform: 'rotate(6.66deg)',
+  }),
+};
+
+const footer = {
+  btnGroup: css({
+    width: '350px',
+    position: 'fixed',
+    bottom: '10px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    zIndex: '10',
+  }),
+  bottombtn: css({
+    display: 'flex',
+    flexDirection: 'row',
+    gap: '10px',
+  }),
+};
