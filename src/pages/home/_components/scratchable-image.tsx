@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Scratchable, ScratchableEvent } from 'scratchable';
-import * as Style from '../../../styles/home/_components/scratchable-image.css';
+import { css } from '@emotion/react';
 import { postFubaoLove } from '@/apis/postFubaoLove';
 
 interface ScratchableImageProps {
@@ -46,7 +46,7 @@ export default function ScratchableImage({ onScratchEnd }: ScratchableImageProps
   }, [ref]);
 
   return (
-    <div ref={ref} css={Style.base}>
+    <div ref={ref} css={base}>
       <img
         src="/assets/img/fubao.jpeg"
         alt="fubao"
@@ -57,3 +57,10 @@ export default function ScratchableImage({ onScratchEnd }: ScratchableImageProps
     </div>
   );
 }
+
+const base = css({
+  width: '298px',
+  height: '346px',
+  borderRadius: '20px',
+  marginTop: '27px',
+});

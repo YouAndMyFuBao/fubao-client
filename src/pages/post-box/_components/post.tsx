@@ -1,6 +1,6 @@
 import { PostData } from '@/data/type';
 import CreatedAtTag from './created-at-tag';
-import * as Style from '../../../styles/post-box/_components/post.css';
+import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
 
 interface PostProps {
@@ -12,8 +12,8 @@ export default function Post({ post }: PostProps) {
   const router = useRouter();
 
   return (
-    <article onClick={() => router.push(`/letter/${postId}`)} css={Style.container}>
-      <div css={Style.base}>
+    <article onClick={() => router.push(`/letter/${postId}`)} css={container}>
+      <div css={base}>
         <CreatedAtTag time={date} />
         <img
           src={imageUrl}
@@ -25,3 +25,18 @@ export default function Post({ post }: PostProps) {
     </article>
   );
 }
+
+const container = css({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '134px',
+  height: '134px',
+  border: '1px solid #000',
+  backgroundColor: '#FFF',
+  cursor: 'pointer',
+});
+
+const base = css({
+  position: 'relative',
+});

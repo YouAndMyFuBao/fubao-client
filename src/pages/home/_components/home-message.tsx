@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import * as Style from '../../../styles/home/_components/home-message.css';
+import { css } from '@emotion/react';
 import { useQuery } from '@tanstack/react-query';
 import { getFubaoLove } from '../../../apis/getFubaoLove';
 interface HomeMessageProps {
@@ -24,7 +24,17 @@ export default function HomeMessage({ scratchableEnd }: HomeMessageProps) {
         },
       }}
     >
-      <p css={Style.base}>{scratchableEnd ? afterMessage : beforeMessage}</p>
+      <p css={base}>{scratchableEnd ? afterMessage : beforeMessage}</p>
     </motion.div>
   );
 }
+
+const base = css({
+  fontSize: '24px',
+  fontWeight: 'bold',
+  color: 'white',
+  whiteSpace: 'pre-wrap',
+  textAlign: 'center',
+  lineHeight: '1.5',
+  marginTop: '85px',
+});

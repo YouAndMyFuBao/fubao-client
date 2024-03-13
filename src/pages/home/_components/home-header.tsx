@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import * as homeHeader from '../../../styles/home/_components/home-header.css';
 import { useState } from 'react';
 import NavigationModal from '@/components/navigation-modal/navigation-modal';
+import { css } from '@emotion/react';
 
 export default function HomeHeader() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -16,10 +16,10 @@ export default function HomeHeader() {
 
   return (
     <>
-      <header css={homeHeader.base}>
-        <div css={homeHeader.container}>
+      <header css={base}>
+        <div css={container}>
           <Image
-            css={homeHeader.hamburger}
+            css={hamburger}
             alt="hamburger"
             src="/assets/svgs/IconHamburger.svg"
             width={26}
@@ -32,3 +32,28 @@ export default function HomeHeader() {
     </>
   );
 }
+
+const base = css({
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%',
+  zIndex: 0,
+});
+
+const container = css({
+  display: 'flex',
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+  padding: '10px 8px',
+  height: '39px',
+  width: '100%',
+  minWidth: '390px',
+  maxWidth: '450px',
+});
+
+const hamburger = css({
+  cursor: 'pointer',
+});

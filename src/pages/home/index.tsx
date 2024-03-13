@@ -8,7 +8,7 @@ import { getCookie } from 'cookies-next';
 import MyLetterButton from './_components/my-letter-button';
 import CopyLink from '@/components/copy-link/copy-link';
 import Button from '@/components/button';
-import * as Style from '../../styles/home/home.css';
+import { css } from '@emotion/react';
 
 const Home = () => {
   const [scratch, setScratch] = useState(false);
@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <HomeHeader />
-      <div css={Style.base}>
+      <div css={base}>
         <HomeMessage scratchableEnd={scratch} />
         <ScratchableImage
           onScratchEnd={() => {
@@ -30,7 +30,7 @@ const Home = () => {
         {scratch && (
           <>
             <CopyLink />
-            <div css={Style.buttonContainer}>
+            <div css={buttonContainer}>
               <Button variants="secondary" onClick={() => router.reload()}>
                 다시 하트주기
               </Button>
@@ -46,3 +46,17 @@ const Home = () => {
 };
 
 export default Home;
+
+const base = css({
+  marginTop: '39px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+});
+
+const buttonContainer = css({
+  display: 'flex',
+  width: '354px',
+  gap: '10px',
+});

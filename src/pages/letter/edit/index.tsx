@@ -1,6 +1,6 @@
 import Header from '@/components/header/header';
 import LetterCard from '@/components/letter-card/letter-card';
-import * as Style from '../../../styles/letter/edit/index.css';
+import { css } from '@emotion/react';
 import { useGetPost } from '@/apis/getPost';
 import DateTimeFormat from '@/utils/dateTimeFormat';
 import { useLetterContext } from '@/hooks/useLetterContext';
@@ -39,11 +39,11 @@ export default function Edit() {
   };
 
   return (
-    <div css={Style.wrapper}>
+    <div css={wrapper}>
       <Header leftBackPage hasLeftBackModal={false}>
         푸바오에게 편지쓰기
       </Header>
-      <div css={Style.main.card}>
+      <div css={main.card}>
         {data && (
           <LetterCard
             variant="textCount"
@@ -53,7 +53,7 @@ export default function Edit() {
           />
         )}
       </div>
-      <div css={Style.main.button}>
+      <div css={main.button}>
         <Button variants="primary" onClick={handleSubmitClick}>
           편지 완성하기
         </Button>
@@ -61,3 +61,21 @@ export default function Edit() {
     </div>
   );
 }
+
+const wrapper = css({
+  height: '100vh',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+});
+
+const main = {
+  card: css({
+    margin: '30px',
+    flexGrow: '1',
+  }),
+
+  button: css({
+    margin: '12px',
+  }),
+};
