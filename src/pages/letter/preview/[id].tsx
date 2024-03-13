@@ -4,7 +4,7 @@ import {
   BackgroundPreviewHand,
   BackgroundPreviewHead,
 } from '../../../../public/assets/svgs';
-import * as Style from './[id].css';
+import * as Style from '../../../styles/letter/preview/[id].css';
 import { useEffect, useRef, useState } from 'react';
 import CopyLink from '@/components/copy-link/copy-link';
 import LetterCard from '@/components/letter-card/letter-card';

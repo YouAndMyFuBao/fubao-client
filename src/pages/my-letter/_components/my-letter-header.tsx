@@ -1,4 +1,4 @@
-import * as Style from './my-letter-header.css';
+import * as Style from '../../../styles/my-letter/_components/my-letter-header.css';
 import { useRouter } from 'next/router';
 
 export default function MyLetterHeader() {

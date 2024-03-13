@@ -5,7 +5,7 @@ import LetterCard from '@/components/letter-card/letter-card';
 import { useLetterContext } from '@/hooks/useLetterContext';
 import { useMutation } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
-import * as Style from './index.css';
+import * as Style from '../../../styles/letter/create/index.css';
 import { useEffect, useState } from 'react';
 import { getCookie } from 'cookies-next';
 import { BottomSheet } from '@/components/bottom-sheet/bottom-sheet';

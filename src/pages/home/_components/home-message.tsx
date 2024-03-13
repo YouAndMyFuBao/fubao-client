@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import * as Style from './home-message.css';
+import * as Style from '../../../styles/home/_components/home-message.css';
 import { useQuery } from '@tanstack/react-query';
 import { getFubaoLove } from '../../../apis/getFubaoLove';
 interface HomeMessageProps {

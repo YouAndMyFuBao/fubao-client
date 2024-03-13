@@ -1,4 +1,4 @@
-import * as Style from './home-message-bottom.css';
+import * as Style from '../../../styles/home/_components/home-message-bottom.css';
 import { useQuery } from '@tanstack/react-query';
 import { getFubaoLove } from '../../../apis/getFubaoLove';
 

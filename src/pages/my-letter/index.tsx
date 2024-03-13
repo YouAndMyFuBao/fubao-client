@@ -5,7 +5,7 @@ import MyLetterHeader from './_components/my-letter-header';
 import { useQuery } from '@tanstack/react-query';
 import { getMyLetter } from '@/apis/getMyLetter';
 import LetterCard from '@/components/letter-card/letter-card';
-import * as Style from './my-letter.css';
+import * as Style from '../../styles/my-letter/my-letter.css';
 import { BottomSheet } from '@/components/bottom-sheet/bottom-sheet';
 import { useState, useEffect } from 'react';
 import { deletePost } from '@/apis/deletePost';
