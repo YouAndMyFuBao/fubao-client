@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Scratchable, ScratchableEvent } from 'scratchable';
-import * as Style from './scratchable-image.css';
+import * as Style from '../../../styles/home/_components/scratchable-image.css';
 import { postFubaoLove } from '@/apis/postFubaoLove';
 
 interface ScratchableImageProps {

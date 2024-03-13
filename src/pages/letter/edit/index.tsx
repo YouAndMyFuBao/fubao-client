@@ -1,6 +1,6 @@
 import Header from '@/components/header/header';
 import LetterCard from '@/components/letter-card/letter-card';
-import * as Style from './index.css';
+import * as Style from '../../../styles/letter/edit/index.css';
 import { useGetPost } from '@/apis/getPost';
 import DateTimeFormat from '@/utils/dateTimeFormat';
 import { useLetterContext } from '@/hooks/useLetterContext';

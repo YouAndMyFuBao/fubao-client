@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import * as homeHeader from './home-header.css';
+import * as homeHeader from '../../../styles/home/_components/home-header.css';
 import { useState } from 'react';
 import NavigationModal from '@/components/navigation-modal/navigation-modal';
 

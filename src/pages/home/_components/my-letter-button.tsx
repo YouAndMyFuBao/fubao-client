@@ -1,4 +1,4 @@
-import * as Style from './my-letter-button.css';
+import * as Style from '../../../styles/home/_components/my-letter-button.css';
 
 interface MyLetterButtonProps {
   onClick?: () => void;

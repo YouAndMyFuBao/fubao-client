@@ -1,6 +1,6 @@
 import { PostData } from '@/data/type';
 import CreatedAtTag from './created-at-tag';
-import * as Style from './post.css';
+import * as Style from '../../../styles/post-box/_components/post.css';
 import { useRouter } from 'next/router';
 
 interface PostProps {

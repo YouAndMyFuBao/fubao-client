@@ -1,4 +1,4 @@
-import * as Style from './created-at-tag.css';
+import * as Style from '../../../styles/post-box/_components/created-at-tag.css';
 
 interface CreatedAtTagProps {
   time: string;

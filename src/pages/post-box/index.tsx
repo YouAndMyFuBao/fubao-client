@@ -1,6 +1,6 @@
 import Button from '@/components/button';
 import HomeHeader from '../home/_components/home-header';
-import * as Style from './post-box.css';
+import * as Style from '../../styles/post-box/post-box.css';
 import { useRouter } from 'next/navigation';
 import Post from './_components/post';
 import { useInfiniteQuery } from '@tanstack/react-query';

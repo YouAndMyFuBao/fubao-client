@@ -8,7 +8,7 @@ import { getCookie } from 'cookies-next';
 import MyLetterButton from './_components/my-letter-button';
 import CopyLink from '@/components/copy-link/copy-link';
 import Button from '@/components/button';
-import * as Style from './home.css';
+import * as Style from '../../styles/home/home.css';
 
 const Home = () => {
   const [scratch, setScratch] = useState(false);
